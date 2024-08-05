@@ -13,20 +13,25 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Setup Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
     - name: Fetch accelerated-domains.china.conf
       run: |
         curl -o SmartDNS/accelerated-domains.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
-        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/accelerated-domains.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/accelerated-domains.china.txt
 
     - name: Fetch apple.china.conf
       run: |
         curl -o SmartDNS/apple.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
-        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/apple.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/apple.china.txt
 
     - name: Fetch google.china.conf
       run: |
         curl -o SmartDNS/google.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf
-        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/google.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/google.china.txt
 
     - name: Fetch gfw.txt
       run: curl -o SmartDNS/gfw.txt https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
@@ -34,20 +39,20 @@ jobs:
     - name: Fetch microsoft_cdn.conf
       run: |
         curl -o SmartDNS/microsoft.china.txt https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
-        sed -i 's/DOMAIN-SUFFIX,//g' SmartDNS/microsoft_cdn.conf
-        sed -i 's/DOMAIN,//g' SmartDNS/microsoft_cdn.conf
+        sed -i 's/DOMAIN-SUFFIX,//g' SmartDNS/microsoft.china.txt
+        sed -i 's/DOMAIN,//g' SmartDNS/microsoft.china.txt
 
     - name: Check for changes
+      id: check_changes
       run: |
         if git diff --exit-code; then
-          echo "No changes detected."
-          exit 0
+          echo "changes_detected=false" >> $GITHUB_ENV
         else
-          echo "Changes detected."
+          echo "changes_detected=true" >> $GITHUB_ENV
         fi
 
     - name: Commit and push changes
-      if: success()
+      if: env.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
@@ -56,4 +61,3 @@ jobs:
         git push
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
