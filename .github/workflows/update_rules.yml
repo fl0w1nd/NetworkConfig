@@ -26,7 +26,7 @@ jobs:
 
     - name: Fetch and reformat Google.rule
       run: |
-        curl -o Rules/Google.rule https://whatshub.top/rule/Google.rule
+        curl -o Rules/Google.list https://whatshub.top/rule/Google.rule
         sed -i '1d;s/^  - //' Rules/Google.list
 
     - name: Fetch Bing.list
