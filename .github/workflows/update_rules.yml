@@ -24,8 +24,10 @@ jobs:
     - name: Fetch GoogleFCM.list
       run: curl -o Rules/GoogleFCM.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
 
-    - name: Fetch Google.rule
-      run: curl -o Rules/Google.rule https://whatshub.top/rule/Google.rule
+    - name: Fetch and reformat Google.rule
+      run: |
+        curl -o Rules/Google.rule https://whatshub.top/rule/Google.rule
+        sed -i '1d;s/^  - //' Rules/Google.list
 
     - name: Fetch Bing.list
       run: curl -o Rules/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
@@ -37,13 +39,13 @@ jobs:
       run: curl -o Rules/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
 
     - name: Fetch MicrosoftCDN.conf
-      run: curl -o Rules/MicrosoftCDN.conf https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
+      run: curl -o Rules/MicrosoftCDN.list https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
 
     - name: Fetch Apple.list
       run: curl -o Rules/Apple.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
 
     - name: Fetch AppleCDN.conf
-      run: curl -o Rules/AppleCDN.conf https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
+      run: curl -o Rules/AppleCDN.list https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
 
     - name: Fetch Telegram.list
       run: curl -o Rules/Telegram.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
