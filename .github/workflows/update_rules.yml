@@ -1,0 +1,93 @@
+name: update rules
+
+on:
+  schedule:
+    # 每周一凌晨 1 点（UTC 时间）运行
+    - cron: '0 1 * * 1'
+
+jobs:
+  update-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Fetch OpenAi.list
+      run: curl -o Rules/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+
+    - name: Fetch GoogleFCM.list
+      run: curl -o Rules/GoogleFCM.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+
+    - name: Fetch Google.rule
+      run: curl -o Rules/Google.rule https://whatshub.top/rule/Google.rule
+
+    - name: Fetch Bing.list
+      run: curl -o Rules/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+
+    - name: Fetch OneDrive.list
+      run: curl -o Rules/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+
+    - name: Fetch Microsoft.list
+      run: curl -o Rules/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+
+    - name: Fetch MicrosoftCDN.conf
+      run: curl -o Rules/MicrosoftCDN.conf https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
+
+    - name: Fetch Apple.list
+      run: curl -o Rules/Apple.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+
+    - name: Fetch AppleCDN.conf
+      run: curl -o Rules/AppleCDN.conf https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
+
+    - name: Fetch Telegram.list
+      run: curl -o Rules/Telegram.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
+
+    - name: Fetch Netflix.list
+      run: curl -o Rules/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+
+    - name: Fetch ProxyMedia.list
+      run: curl -o Rules/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+
+    - name: Fetch Epic.list
+      run: curl -o Rules/Epic.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+
+    - name: Fetch Origin.list
+      run: curl -o Rules/Origin.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+
+    - name: Fetch Nintendo.list
+      run: curl -o Rules/Nintendo.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+
+    - name: Fetch Sony.list
+      run: curl -o Rules/Sony.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+
+    - name: Fetch ProxyGFWlist.list
+      run: curl -o Rules/ProxyGFWlist.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+
+    - name: Fetch GoogleCN.list
+      run: curl -o Rules/GoogleCN.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+
+    - name: Fetch ChinaIp.list
+      run: curl -o Rules/ChinaIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+
+    - name: Fetch ChinaDomain.list
+      run: curl -o Rules/ChinaDomain.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+
+    - name: Fetch ChinaCompanyIp.list
+      run: curl -o Rules/ChinaCompanyIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+
+    - name: Fetch Download.list
+      run: curl -o Rules/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+
+    - name: Fetch LocalAreaNetwork.list
+      run: curl -o Rules/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add Rules/
+        git commit -m 'Update rules from external URLs'
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
