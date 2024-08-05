@@ -29,6 +29,9 @@ jobs:
         curl -o Rules/Google.list https://whatshub.top/rule/Google.rule
         sed -i '1d;s/^  - //' Rules/Google.list
 
+    - name: Fetch direct.txt
+      run: curl -o Rules/Direct.list https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
+      
     - name: Fetch Bing.list
       run: curl -o Rules/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
 
