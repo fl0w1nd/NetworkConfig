@@ -150,6 +150,8 @@ www.gstatic.com
 www.pxcc.com
 xn--9kr7l.com
 xn--flw351e.com
+
+# Google Corp aka ÜberProxy domains
 applemdm.corp.google.com
 dns.corp.google.com
 g3doc.corp.google.com
@@ -183,8 +185,11 @@ uberproxy-debug4.corp.google.com
 uberproxy-debug.corp.google.com
 uberproxy-pen-redirect.corp.google.com
 vext.corp.google.com
+
 sup.l.google.com
 uberproxy-with-cn.l.google.com
 uberproxy-with-cn4.l.google.com
 uberproxy-with-cn6.l.google.com
+
+# Other corp related domain
 qiao-cn.com
