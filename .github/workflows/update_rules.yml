@@ -91,13 +91,13 @@ jobs:
       id: check_changes
       run: |
         if git diff --exit-code; then
-          echo "::set-output name=changes_detected::false"
+          echo "changes_detected=false" >> $GITHUB_ENV
         else
-          echo "::set-output name=changes_detected::true"
+          echo "changes_detected=true" >> $GITHUB_ENV
         fi
 
     - name: Commit and push changes
-      if: steps.check_changes.outputs.changes_detected == 'true'
+      if: env.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
