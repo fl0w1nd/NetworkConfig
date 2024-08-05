@@ -1,0 +1,59 @@
+name: Update SmartDNS Domain Rules
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch: 
+
+jobs:
+  update-smartdns-rules:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Fetch accelerated-domains.china.conf
+      run: |
+        curl -o SmartDNS/accelerated-domains.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/accelerated-domains.china.conf
+
+    - name: Fetch apple.china.conf
+      run: |
+        curl -o SmartDNS/apple.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/apple.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/apple.china.conf
+
+    - name: Fetch google.china.conf
+      run: |
+        curl -o SmartDNS/google.china.txt https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/google.china.conf
+        sed -i 's/server=\/\(.*\)\/114\.114\.114\.114/\1/' SmartDNS/google.china.conf
+
+    - name: Fetch gfw.txt
+      run: curl -o SmartDNS/gfw.txt https://raw.githubusercontent.com/Loyalsoldier/v2ray-rules-dat/release/gfw.txt
+
+    - name: Fetch microsoft_cdn.conf
+      run: |
+        curl -o SmartDNS/microsoft.china.txt https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
+        sed -i 's/DOMAIN-SUFFIX,//g' SmartDNS/microsoft_cdn.conf
+        sed -i 's/DOMAIN,//g' SmartDNS/microsoft_cdn.conf
+
+    - name: Check for changes
+      run: |
+        if git diff --exit-code; then
+          echo "No changes detected."
+          exit 0
+        else
+          echo "Changes detected."
+        fi
+
+    - name: Commit and push changes
+      if: success()
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add SmartDNS/
+        git commit -m 'Update SmartDNS Domain Rules'
+        git push
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
