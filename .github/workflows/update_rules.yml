@@ -2,10 +2,8 @@ name: update rules
 
 on:
   schedule:
-    # 每周一凌晨 1 点（UTC 时间）运行
-    - cron: '0 1 * * 1'
-  workflow_dispatch: # 手动触发
-
+    - cron: '0 1 * * *'
+  workflow_dispatch: 
 
 jobs:
   update-rules:
@@ -84,12 +82,22 @@ jobs:
     - name: Fetch LocalAreaNetwork.list
       run: curl -o Rules/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 
+    - name: Check for changes
+      run: |
+        if git diff --exit-code; then
+          echo "No changes detected."
+          exit 0
+        else
+          echo "Changes detected."
+        fi
+
     - name: Commit and push changes
+      if: success()
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
         git add Rules/
-        git commit -m 'Update rules'
+        git commit -m 'Update Rules'
         git push
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
