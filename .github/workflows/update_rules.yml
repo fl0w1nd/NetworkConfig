@@ -13,6 +13,11 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Setup Node.js 20
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
     - name: Fetch OpenAi.list
       run: curl -o Rules/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
 
@@ -83,16 +88,16 @@ jobs:
       run: curl -o Rules/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
 
     - name: Check for changes
+      id: check_changes
       run: |
         if git diff --exit-code; then
-          echo "No changes detected."
-          exit 0
+          echo "::set-output name=changes_detected::false"
         else
-          echo "Changes detected."
+          echo "::set-output name=changes_detected::true"
         fi
 
     - name: Commit and push changes
-      if: success()
+      if: steps.check_changes.outputs.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
