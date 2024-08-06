@@ -1,6 +1,7 @@
 # E站分流
-# 数量：4条
+# 数量：5条
 DOMAIN-SUFFIX,e-hentai.org
 DOMAIN-SUFFIX,exhentai.org
 DOMAIN-KEYWORD,ehtracker
 DOMAIN-SUFFIX,hath.network
+DOMAIN-SUFFIX,hentaiverse.org
