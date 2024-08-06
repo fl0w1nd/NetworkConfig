@@ -86,182 +86,182 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/OpenAi.list"
+    url: "https://ruleset.zcsouls.com/Rules/OpenAi.list"
     interval: 86400
 
   GoogleFCM:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/GoogleFCM.list"
+    url: "https://ruleset.zcsouls.com/Rules/GoogleFCM.list"
     interval: 86400
 
   Google:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Google.list"
+    url: "https://ruleset.zcsouls.com/Rules/Google.list"
     interval: 86400
 
   SteamCommunity:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/SteamCommunity.list"
+    url: "https://ruleset.zcsouls.com/Rules/SteamCommunity.list"
     interval: 86400
 
   Bing:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Bing.list"
+    url: "https://ruleset.zcsouls.com/Rules/Bing.list"
     interval: 86400
 
   OneDrive:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/OneDrive.list"
+    url: "https://ruleset.zcsouls.com/Rules/OneDrive.list"
     interval: 86400
 
   Microsoft:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Microsoft.list"
+    url: "https://ruleset.zcsouls.com/Rules/Microsoft.list"
     interval: 86400
 
   MicrosoftCDN:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/MicrosoftCDN.list"
+    url: "https://ruleset.zcsouls.com/Rules/MicrosoftCDN.list"
     interval: 86400
 
   Apple:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Apple.list"
+    url: "https://ruleset.zcsouls.com/Rules/Apple.list"
     interval: 86400
     
   AppleCDN:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/AppleCDN.list"
+    url: "https://ruleset.zcsouls.com/Rules/AppleCDN.list"
     interval: 86400
     
   Telegram:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Telegram.list"
+    url: "https://ruleset.zcsouls.com/Rules/Telegram.list"
     interval: 86400
 
   Netflix:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Netflix.list"
+    url: "https://ruleset.zcsouls.com/Rules/Netflix.list"
     interval: 86400
 
   ProxyMedia:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/ProxyMedia.list"
+    url: "https://ruleset.zcsouls.com/Rules/ProxyMedia.list"
     interval: 86400
 
   SteamCN:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/SteamCN.list"
+    url: "https://ruleset.zcsouls.com/Rules/SteamCN.list"
     interval: 86400
 
   Epic:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Epic.list"
+    url: "https://ruleset.zcsouls.com/Rules/Epic.list"
     interval: 86400
 
   Origin:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Origin.list"
+    url: "https://ruleset.zcsouls.com/Rules/Origin.list"
     interval: 86400
 
   Nintendo:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Nintendo.list"
+    url: "https://ruleset.zcsouls.com/Rules/Nintendo.list"
     interval: 86400
 
   Sony:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Sony.list"
+    url: "https://ruleset.zcsouls.com/Rules/Sony.list"
     interval: 86400
 
   ProxyGFWlist:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/ProxyGFWlist.list"
+    url: "https://ruleset.zcsouls.com/Rules/ProxyGFWlist.list"
     interval: 86400
 
   GoogleCN:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/GoogleCN.list"
+    url: "https://ruleset.zcsouls.com/Rules/GoogleCN.list"
     interval: 86400
 
   ChinaIp:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/ChinaIp.list"
+    url: "https://ruleset.zcsouls.com/Rules/ChinaIp.list"
     interval: 86400
 
   ChinaDomain:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/ChinaDomain.list"
+    url: "https://ruleset.zcsouls.com/Rules/ChinaDomain.list"
     interval: 86400
 
   ChinaCompanyIp:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/ChinaCompanyIp.list"
+    url: "https://ruleset.zcsouls.com/Rules/ChinaCompanyIp.list"
     interval: 86400
 
   Download:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/Download.list"
+    url: "https://ruleset.zcsouls.com/Rules/Download.list"
     interval: 86400
 
   LocalAreaNetwork:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/LocalAreaNetwork.list"
+    url: "https://ruleset.zcsouls.com/Rules/LocalAreaNetwork.list"
     interval: 86400
 
   BT:
     type: http
     behavior: classical
     format: text
-    url: "https://raw.githubusercontent.com/fl0w1nd/NetworkConfig/main/Rules/BT.list"
+    url: "https://ruleset.zcsouls.com/Rules/BT.list"
     interval: 86400
 
 
