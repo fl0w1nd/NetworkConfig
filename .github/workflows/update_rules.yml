@@ -50,9 +50,6 @@ jobs:
     - name: Fetch AppleCDN.conf
       run: curl -o Rules/AppleCDN.list https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
 
-    - name: Fetch Telegram.list
-      run: curl -o Rules/Telegram.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
-
     - name: Fetch Netflix.list
       run: curl -o Rules/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
 
