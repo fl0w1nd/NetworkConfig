@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js 20
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: 20
 
     - name: Fetch OpenAi.list
       run: curl -o Rules/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
@@ -70,6 +70,9 @@ jobs:
 
     - name: Fetch ProxyGFWlist.list
       run: curl -o Rules/ProxyGFWlist.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+
+    - name: Fetch global.txt
+      run: curl -o Rules/Global.list https://ruleset.skk.moe/Clash/non_ip/global.txt
 
     - name: Fetch GoogleCN.list
       run: curl -o Rules/GoogleCN.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
