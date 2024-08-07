@@ -101,13 +101,21 @@ jobs:
           echo "changes_detected=true" >> $GITHUB_ENV
         fi
 
+    - name: Update index.html with current Beijing time
+      if: env.changes_detected == 'true'
+      run: |
+        # Get the current Beijing time
+        current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
+        # Update the index.html file
+        sed -i "s|<p>Last Update:.*</p>|<p>Last Update: $current_time</p>|" index.html
+
     - name: Commit and push changes
       if: env.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add Rules/
-        git commit -m 'Update Rules'
+        git add Rules/ index.html
+        git commit -m 'Update Rules and Last Update Time'
         git push
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
