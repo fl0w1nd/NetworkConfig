@@ -36,24 +36,32 @@ sniffer:
 dns:
   enable: true
   ipv6: false
-  respect-rules: true
   enhanced-mode: redir-host
   nameserver:
-    - 114.114.114.114
     - 223.5.5.5
     - 119.29.29.29
+  fallback:
+    - 8.8.8.8#🚀节点选择
+    - 1.1.1.1#🚀节点选择
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
   default-nameserver:
-  - 114.114.114.114
+   - 114.114.114.114
+   - 223.5.5.5
   proxy-server-nameserver:
-  - 114.114.114.114
+   - 114.114.114.114
+   - 223.5.5.5
   nameserver-policy:
     "geosite:cn,private":
       - 114.114.114.114
       - 223.5.5.5
       - 119.29.29.29
     "geosite:geolocation-!cn":
-      - "https://dns.cloudflare.com/dns-query"
-      - "https://dns.google/dns-query"
+      - 8.8.8.8
+      - 1.1.1.1
   
 proxy-groups:
 - {name: 🚀手动切换, type: select, include-all-providers: true}
@@ -215,6 +223,13 @@ rule-providers:
     url: "https://ruleset.zcsouls.com/Rules/ProxyGFWlist.list"
     interval: 86400
 
+  Global:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Global.list"
+    interval: 86400
+
   GoogleCN:
     type: http
     behavior: classical
@@ -286,6 +301,7 @@ rules:
   - RULE-SET,Origin,🎮游戏平台
   - RULE-SET,Nintendo,🎮游戏平台
   - RULE-SET,ProxyGFWlist,🚀节点选择
+  - RULE-SET,Global,🚀节点选择
   - RULE-SET,ChinaIp,🎯全球直连
   - RULE-SET,ChinaDomain,🎯全球直连
   - RULE-SET,ChinaCompanyIp,🎯全球直连
