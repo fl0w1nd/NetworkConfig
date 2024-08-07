@@ -1,0 +1,22 @@
+{
+  "headers": [
+    {
+      "source": "/:path*\\.(txt|list)$",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain"
+        }
+      ]
+    },
+    {
+      "source": "/:path*\\.(conf|yaml)$",
+      "headers": [
+        {
+          "key": "Content-Disposition",
+          "value": "attachment"
+        }
+      ]
+    }
+  ]
+}
