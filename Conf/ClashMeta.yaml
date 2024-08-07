@@ -60,8 +60,8 @@ dns:
       - 223.5.5.5
       - 119.29.29.29
     "geosite:geolocation-!cn":
-      - 8.8.8.8
-      - 1.1.1.1
+      - 8.8.8.8#🚀节点选择
+      - 1.1.1.1#🚀节点选择
   
 proxy-groups:
 - {name: 🚀手动切换, type: select, include-all-providers: true}
