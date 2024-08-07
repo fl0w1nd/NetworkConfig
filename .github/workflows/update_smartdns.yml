@@ -2,7 +2,7 @@ name: Update SmartDNS Domain Rules
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 1 * * *'
   workflow_dispatch: 
 
 jobs:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Node.js 20
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: 20
 
     - name: Fetch accelerated-domains.china.conf
       run: |
@@ -51,13 +51,21 @@ jobs:
           echo "changes_detected=true" >> $GITHUB_ENV
         fi
 
+    - name: Update index.html with current Beijing time
+      if: env.changes_detected == 'true'
+      run: |
+        # Get the current Beijing time
+        current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
+        # Update the index.html file
+        sed -i "s|<p>Last Update:.*</p>|<p>Last Update: $current_time</p>|" index.html
+
     - name: Commit and push changes
       if: env.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add SmartDNS/
-        git commit -m 'Update SmartDNS Domain Rules'
+        git add SmartDNS/ index.html
+        git commit -m 'Update SmartDNS Domain Rules and Last Update Time'
         git push
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
