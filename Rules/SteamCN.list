@@ -1,5 +1,5 @@
 # 内容：Steam登录与下载
-# 数量：45条
+# 数量：47条
 DOMAIN,dl.steam.clngaa.com
 DOMAIN,dl.steam.ksyna.com
 DOMAIN,st.dl.bscstorage.net
@@ -22,6 +22,8 @@ DOMAIN-SUFFIX,test.steampowered.com
 DOMAIN-SUFFIX,api.steampowered.com
 DOMAIN,xz.pphimalayanrt.com
 DOMAIN-SUFFIX,rmbgame.net
+DOMAIN,steam-chat.com
+DOMAIN,steamcdn-a.akamaihd.net
 # IP段
 IP-CIDR,45.121.184.0/24,no-resolve
 IP-CIDR,103.10.124.0/23,no-resolve
