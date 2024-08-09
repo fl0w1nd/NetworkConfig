@@ -118,7 +118,6 @@ jobs:
         fi
 
     - name: Count rules and update README
-      if: env.changes_detected == 'true'
       run: |
         # Initialize counters
         domain_count=0
@@ -156,7 +155,6 @@ jobs:
 
 
     - name: Update index.html with current Beijing time
-      if: env.changes_detected == 'true'
       run: |
         # Get the current Beijing time
         current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
@@ -166,11 +164,10 @@ jobs:
         sed -i "s|### \[Last Update:.*\]|### \[Last Update: $current_time\]|" README.md
 
     - name: Commit and push changes
-      if: env.changes_detected == 'true'
       run: |
         git config --global user.name 'github-actions'
         git config --global user.email 'github-actions@github.com'
-        git add Rules/ index.html
+        git add Rules/ index.html README.md
         git commit -m 'Update Rules and Last Update Time'
         git push
       env:
