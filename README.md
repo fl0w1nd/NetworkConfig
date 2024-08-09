@@ -57,7 +57,7 @@
 
 ## 📈 规则统计
 
-### Last Update: 2024-08-10 01:49
+### Last Update: 2024-08-10
 
 <table border="1" cellspacing="0" cellpadding="5">
   <thead>
@@ -69,35 +69,35 @@
   <tbody>
     <tr>
       <td>DOMAIN</td>
-      <td>?</td>
+      <td>615</td>
     </tr>
     <tr>
       <td>DOMAIN-KEYWORD</td>
-      <td>?</td>
+      <td>90</td>
     </tr>
     <tr>
       <td>DOMAIN-SUFFIX</td>
-      <td>?</td>
+      <td>96946</td>
     </tr>
     <tr>
       <td>IP-CIDR</td>
-      <td>?</td>
+      <td>7314</td>
     </tr>
     <tr>
       <td>USER-AGENT</td>
-      <td>?</td>
+      <td>45</td>
     </tr>
     <tr>
       <td>URL-REGEX</td>
-      <td>?</td>
+      <td>7</td>
     </tr>
     <tr>
       <td>PROCESS-NAME</td>
-      <td>?</td>
+      <td>62</td>
     </tr>
     <tr>
       <td>TOTAL</td>
-      <td>?</td>
+      <td>105079</td>
     </tr>
   </tbody>
 </table>
