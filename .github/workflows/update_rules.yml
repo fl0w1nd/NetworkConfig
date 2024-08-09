@@ -117,6 +117,44 @@ jobs:
           echo "changes_detected=true" >> $GITHUB_ENV
         fi
 
+    - name: Count rules and update README
+      if: env.changes_detected == 'true'
+      run: |
+        # Initialize counters
+        domain_count=0
+        domain_keyword_count=0
+        domain_suffix_count=0
+        ip_cidr_count=0
+        user_agent_count=0
+        url_regex_count=0
+        process_name_count=0
+        
+        # Iterate over all .list files in the Rules directory
+        for file in Rules/*.list; do
+          # Count each type of rule
+          domain_count=$((domain_count + $(grep -c '^DOMAIN' "$file")))
+          domain_keyword_count=$((domain_keyword_count + $(grep -c '^DOMAIN-KEYWORD' "$file")))
+          domain_suffix_count=$((domain_suffix_count + $(grep -c '^DOMAIN-SUFFIX' "$file")))
+          ip_cidr_count=$((ip_cidr_count + $(grep -c '^IP-CIDR' "$file")))
+          user_agent_count=$((user_agent_count + $(grep -c '^USER-AGENT' "$file")))
+          url_regex_count=$((url_regex_count + $(grep -c '^URL-REGEX' "$file")))
+          process_name_count=$((process_name_count + $(grep -c '^PROCESS-NAME' "$file")))
+        done
+
+        # Calculate total count
+        total_count=$((domain_count + domain_keyword_count + domain_suffix_count + ip_cidr_count + user_agent_count + url_regex_count + process_name_count))
+        
+        # Update README.md with the new counts
+        sed -i "s/<td>DOMAIN<\/td>\n\s*<td>.*<\/td>/<td>DOMAIN<\/td>\n      <td>$domain_count<\/td>/" README.md
+        sed -i "s/<td>DOMAIN-KEYWORD<\/td>\n\s*<td>.*<\/td>/<td>DOMAIN-KEYWORD<\/td>\n      <td>$domain_keyword_count<\/td>/" README.md
+        sed -i "s/<td>DOMAIN-SUFFIX<\/td>\n\s*<td>.*<\/td>/<td>DOMAIN-SUFFIX<\/td>\n      <td>$domain_suffix_count<\/td>/" README.md
+        sed -i "s/<td>IP-CIDR<\/td>\n\s*<td>.*<\/td>/<td>IP-CIDR<\/td>\n      <td>$ip_cidr_count<\/td>/" README.md
+        sed -i "s/<td>USER-AGENT<\/td>\n\s*<td>.*<\/td>/<td>USER-AGENT<\/td>\n      <td>$user_agent_count<\/td>/" README.md
+        sed -i "s/<td>URL-REGEX<\/td>\n\s*<td>.*<\/td>/<td>URL-REGEX<\/td>\n      <td>$url_regex_count<\/td>/" README.md
+        sed -i "s/<td>PROCESS-NAME<\/td>\n\s*<td>.*<\/td>/<td>PROCESS-NAME<\/td>\n      <td>$process_name_count<\/td>/" README.md
+        sed -i "s/<td>TOTAL<\/td>\n\s*<td>.*<\/td>/<td>TOTAL<\/td>\n      <td>$total_count<\/td>/" README.md
+
+
     - name: Update index.html with current Beijing time
       if: env.changes_detected == 'true'
       run: |
@@ -124,6 +162,8 @@ jobs:
         current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
         # Update the index.html file
         sed -i "s|<p>Last Update:.*</p>|<p>Last Update: $current_time</p>|" index.html
+        # Update README.md
+        sed -i "s|### \[Last Update:.*\]|### \[Last Update: $current_time\]|" README.md
 
     - name: Commit and push changes
       if: env.changes_detected == 'true'

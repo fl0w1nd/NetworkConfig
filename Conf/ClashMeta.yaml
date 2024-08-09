@@ -129,7 +129,7 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/OneDrive.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/OneDrive.list"
     interval: 86400
 
   Microsoft:
@@ -171,14 +171,14 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Netflix.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Netflix.list"
     interval: 86400
 
   ProxyMedia:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/ProxyMedia.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ProxyMedia.list"
     interval: 86400
 
   SteamCN:
@@ -262,7 +262,7 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Download.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Download.list"
     interval: 86400
 
   LocalAreaNetwork:
