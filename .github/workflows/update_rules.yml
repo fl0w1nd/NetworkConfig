@@ -35,9 +35,6 @@ jobs:
     - name: Fetch Bing.list
       run: curl -o Rules/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
 
-    - name: Fetch OneDrive.list
-      run: curl -o Rules/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
-
     - name: Fetch Microsoft.list
       run: curl -o Rules/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
 
@@ -49,12 +46,6 @@ jobs:
 
     - name: Fetch AppleCDN.conf
       run: curl -o Rules/AppleCDN.list https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
-
-    - name: Fetch Netflix.list
-      run: curl -o Rules/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-
-    - name: Fetch ProxyMedia.list
-      run: curl -o Rules/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
 
     - name: Fetch Epic.list
       run: curl -o Rules/Epic.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
@@ -86,11 +77,36 @@ jobs:
     - name: Fetch ChinaCompanyIp.list
       run: curl -o Rules/ChinaCompanyIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
 
-    - name: Fetch Download.list
-      run: curl -o Rules/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-
     - name: Fetch LocalAreaNetwork.list
       run: curl -o Rules/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+
+    - name: Fetch OneDrive.list
+      run: |
+        curl -o Rules/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+        cp Rules/OneDrive.list Rules/Clash\ Meta/OneDrive.list
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/OneDrive.list
+        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/OneDrive.list
+
+    - name: Fetch Netflix.list
+      run: |
+        curl -o Rules/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+        cp Rules/Netflix.list Rules/Clash\ Meta/Netflix.list
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Netflix.list
+        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/Netflix.list
+
+    - name: Fetch ProxyMedia.list
+      run: |
+        curl -o Rules/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+        cp Rules/ProxyMedia.list Rules/Clash\ Meta/ProxyMedia.list
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/ProxyMedia.list
+        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/ProxyMedia.list
+
+    - name: Fetch Download.list
+      run: |
+        curl -o Rules/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+        cp Rules/Download.list Rules/Clash\ Meta/Download.list
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Download.list
+        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/Download.list
 
     - name: Check for changes
       id: check_changes
