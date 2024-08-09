@@ -108,14 +108,6 @@ jobs:
         sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Download.list
         sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/Download.list
 
-    - name: Check for changes
-      id: check_changes
-      run: |
-        if git diff --exit-code; then
-          echo "changes_detected=false" >> $GITHUB_ENV
-        else
-          echo "changes_detected=true" >> $GITHUB_ENV
-        fi
 
     - name: Count rules and update README
       run: |
