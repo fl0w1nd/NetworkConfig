@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - General Global Services
-# Last Updated: 2024-08-07T09:59:58.843Z
-# Size: 586
+# Last Updated: 2024-08-13T18:29:29.863Z
+# Size: 594
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -9,6 +9,12 @@
 # This file contains rules for services that are not available inside the Mainland China.
 #########################################
 DOMAIN,this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
+DOMAIN,pki.goog
+DOMAIN,addons.mozilla.org
+DOMAIN,ees.elsevier.com
+DOMAIN,ccmdl.adobe.com
+DOMAIN,media.steampowered.com
+DOMAIN,wego.here.com
 DOMAIN-SUFFIX,abc.xyz
 DOMAIN-SUFFIX,ampproject.org
 DOMAIN-SUFFIX,android.com
@@ -93,10 +99,7 @@ DOMAIN-SUFFIX,youtube.com
 DOMAIN-SUFFIX,yt.be
 DOMAIN-SUFFIX,ytimg.com
 DOMAIN-SUFFIX,telephony.goog
-DOMAIN-KEYWORD,google
-DOMAIN-KEYWORD,blogspot
 DOMAIN-SUFFIX,dns.google
-DOMAIN,pki.goog
 DOMAIN-SUFFIX,run.app
 DOMAIN-SUFFIX,cloudflare-dns.com
 DOMAIN-SUFFIX,cloudflare.com
@@ -109,6 +112,10 @@ DOMAIN-SUFFIX,linkedin.com
 DOMAIN-SUFFIX,linkedin.at
 DOMAIN-SUFFIX,lnkd.in
 DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,azurecontainer.io
+DOMAIN-SUFFIX,azurewebsites.net
+DOMAIN-SUFFIX,azure-mobile.net
+DOMAIN-SUFFIX,cloudapp.net
 DOMAIN-SUFFIX,oracle.com
 DOMAIN-SUFFIX,aicoin.com
 DOMAIN-SUFFIX,aimoon.com
@@ -116,7 +123,6 @@ DOMAIN-SUFFIX,engadget.com
 DOMAIN-SUFFIX,ifixit.com
 DOMAIN-SUFFIX,terabox.com
 DOMAIN-SUFFIX,zaobao.com.sg
-DOMAIN,addons.mozilla.org
 DOMAIN-SUFFIX,github.com
 DOMAIN-SUFFIX,github.blog
 DOMAIN-SUFFIX,github.community
@@ -168,8 +174,6 @@ DOMAIN-SUFFIX,tfbnw.net
 DOMAIN-SUFFIX,fbsbx.com
 DOMAIN-SUFFIX,threads.net
 DOMAIN-SUFFIX,facebook-hardware.com
-DOMAIN-KEYWORD,facebook
-DOMAIN-KEYWORD,whatsapp
 DOMAIN-SUFFIX,wa.me
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,t.co
@@ -206,7 +210,6 @@ DOMAIN-SUFFIX,discord.com
 DOMAIN-SUFFIX,discordapp.com
 DOMAIN-SUFFIX,discordapp.net
 DOMAIN-SUFFIX,discordcdn.com
-DOMAIN-KEYWORD,discord
 DOMAIN-SUFFIX,aex.com
 DOMAIN-SUFFIX,binance.cc
 DOMAIN-SUFFIX,binance.com
@@ -226,8 +229,6 @@ DOMAIN-SUFFIX,mexc.com
 DOMAIN-SUFFIX,kraken.com
 DOMAIN-SUFFIX,etherscan.io
 DOMAIN-SUFFIX,cryptocompare.com
-DOMAIN,ees.elsevier.com
-DOMAIN-KEYWORD,sci-hub
 DOMAIN-SUFFIX,1password.com
 DOMAIN-SUFFIX,1passwordservices.com
 DOMAIN-SUFFIX,1password.eu
@@ -308,7 +309,6 @@ DOMAIN-SUFFIX,brave.com
 DOMAIN-SUFFIX,bwh1.net
 DOMAIN-SUFFIX,castbox.fm
 DOMAIN-SUFFIX,cbc.ca
-DOMAIN,ccmdl.adobe.com
 DOMAIN-SUFFIX,cdpn.io
 DOMAIN-SUFFIX,change.org
 DOMAIN-SUFFIX,character.ai
@@ -336,7 +336,6 @@ DOMAIN-SUFFIX,disqus.com
 DOMAIN-SUFFIX,dlsite.com
 DOMAIN-SUFFIX,doujins.com
 DOMAIN-SUFFIX,dribbble.com
-DOMAIN-KEYWORD,dropbox
 DOMAIN-SUFFIX,dropbox.com
 DOMAIN-SUFFIX,dropbox-dns.com
 DOMAIN-SUFFIX,dropboxapi.com
@@ -353,6 +352,7 @@ DOMAIN-SUFFIX,dynu.net
 DOMAIN-SUFFIX,dw.com
 DOMAIN-SUFFIX,e-hentai.org
 DOMAIN-SUFFIX,edgecastcdn.net
+DOMAIN-SUFFIX,elasticbeanstalk.com
 DOMAIN-SUFFIX,eroterest.net
 DOMAIN-SUFFIX,exhentai.org
 DOMAIN-SUFFIX,etsy.com
@@ -390,6 +390,7 @@ DOMAIN-SUFFIX,hostloc.com
 DOMAIN-SUFFIX,huggingface.co
 DOMAIN-SUFFIX,huobi.com
 DOMAIN-SUFFIX,ibb.co
+DOMAIN-SUFFIX,influxdata.com
 DOMAIN-SUFFIX,imdb.com
 DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,intel.com
@@ -520,6 +521,7 @@ DOMAIN-SUFFIX,stripchat.com
 DOMAIN-SUFFIX,substack.com
 DOMAIN-SUFFIX,supjav.com
 DOMAIN-SUFFIX,surfshark.com
+DOMAIN-SUFFIX,surge-activation.com
 DOMAIN-SUFFIX,t66y.com
 DOMAIN-SUFFIX,tenor.com
 DOMAIN-SUFFIX,textnow.me
@@ -551,6 +553,7 @@ DOMAIN-SUFFIX,vine.co
 DOMAIN-SUFFIX,viber.com
 DOMAIN-SUFFIX,vivaldi.com
 DOMAIN-SUFFIX,voachinese.com
+DOMAIN-SUFFIX,wakatime.com
 DOMAIN-SUFFIX,w3schools.com
 DOMAIN-SUFFIX,washingtonpost.com
 DOMAIN-SUFFIX,whoer.net
@@ -585,13 +588,18 @@ DOMAIN-SUFFIX,yandex.net
 DOMAIN-SUFFIX,yandex.ru
 DOMAIN-SUFFIX,zendesk.com
 DOMAIN-SUFFIX,moon.fm
-DOMAIN-KEYWORD,jav
-DOMAIN-KEYWORD,pinterest
-DOMAIN-KEYWORD,porn
-DOMAIN,media.steampowered.com
-DOMAIN,wego.here.com
 DOMAIN-SUFFIX,majsoul.union-game.com
 DOMAIN-SUFFIX,prowritingaid.com
 DOMAIN-SUFFIX,wordtune.com
 DOMAIN-SUFFIX,quillbot.com
+DOMAIN-KEYWORD,google
+DOMAIN-KEYWORD,blogspot
+DOMAIN-KEYWORD,facebook
+DOMAIN-KEYWORD,whatsapp
+DOMAIN-KEYWORD,discord
+DOMAIN-KEYWORD,sci-hub
+DOMAIN-KEYWORD,dropbox
+DOMAIN-KEYWORD,jav
+DOMAIN-KEYWORD,pinterest
+DOMAIN-KEYWORD,porn
 ################## EOF ##################
