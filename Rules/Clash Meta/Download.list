@@ -25,3 +25,5 @@ DOMAIN-REGEX,(.+\.|^)(360|so)\.(cn|com)
 PROCESS-NAME,Weiyun.exe
 #Baidu disk
 PROCESS-NAME,baidunetdisk.exe
+# Xbox
+DOMAIN-REGEX,assets\d+\.xboxlive\.(com|cn)
