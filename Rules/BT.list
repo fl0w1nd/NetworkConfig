@@ -1,5 +1,5 @@
 # BT软件
-# 数量：44条
+# 数量：45条
 PROCESS-NAME,v2ray
 PROCESS-NAME,xray
 PROCESS-NAME,naive
@@ -44,3 +44,4 @@ PROCESS-NAME,transmission-daemon.exe
 PROCESS-NAME,transmission-qt.exe
 PROCESS-NAME,uTorrent.exe
 PROCESS-NAME,WebTorrent.exe
+DOMAIN,portcheck.transmissionbt.com
