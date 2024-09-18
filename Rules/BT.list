@@ -47,7 +47,7 @@ PROCESS-NAME,WebTorrent.exe
 DOMAIN,portcheck.transmissionbt.com
 
 # Trackers
-# 数量：159条
+# 数量：160条
 DOMAIN,1337.abcvg.info
 IP-CIDR,207.241.226.111/32
 IP-CIDR,207.241.231.226/32
@@ -207,3 +207,4 @@ DOMAIN,wepzone.net
 DOMAIN,www.torrent.eu.org
 DOMAIN,tracker.openwebtorrent.com
 DOMAIN,z.mercax.com
+DOMAIN-KEYWORD,tracker
