@@ -42,6 +42,7 @@
   * [Download](./Rules/Download.list)
   * [LocalAreaNetwork](./Rules/LocalAreaNetwork.list)
   * [BT](./Rules/BT.list)
+  * [PrivateTracker](./Rules/PrivateTracker.list)
 * Rules/Clash Meta
   * [Netflix](./Rules/Clash%20Meta/Netflix.list)
   * [ProxyMedia](./Rules/Clash%20Meta/ProxyMedia.list)
@@ -57,7 +58,7 @@
 
 ## 📈 规则统计
 
-### Last Update: 2024-08-10
+### Last Update: 2024-09-20
 
 <table border="1" cellspacing="0" cellpadding="5">
   <thead>
@@ -69,19 +70,19 @@
   <tbody>
     <tr>
       <td>DOMAIN</td>
-      <td>615</td>
+      <td>910</td>
     </tr>
     <tr>
       <td>DOMAIN-KEYWORD</td>
-      <td>90</td>
+      <td>95</td>
     </tr>
     <tr>
       <td>DOMAIN-SUFFIX</td>
-      <td>96946</td>
+      <td>98520</td>
     </tr>
     <tr>
       <td>IP-CIDR</td>
-      <td>7314</td>
+      <td>7324</td>
     </tr>
     <tr>
       <td>USER-AGENT</td>
@@ -89,7 +90,7 @@
     </tr>
     <tr>
       <td>URL-REGEX</td>
-      <td>7</td>
+      <td>8</td>
     </tr>
     <tr>
       <td>PROCESS-NAME</td>
@@ -97,7 +98,7 @@
     </tr>
     <tr>
       <td>TOTAL</td>
-      <td>105079</td>
+      <td>106964</td>
     </tr>
   </tbody>
 </table>
