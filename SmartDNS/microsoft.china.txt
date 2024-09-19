@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - Microsoft CDN
-# Last Updated: 2024-09-07T17:56:22.202Z
-# Size: 15
+# Last Updated: 2024-09-18T04:42:23.196Z
+# Size: 16
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -24,6 +24,7 @@ wscont2.apps.microsoft.com
 wscont1.apps.microsoft.com
 officecdn.microsoft.com
 download.microsoft.com
+build.microsoft.com
 sdx.microsoft.com
 fs.microsoft.com
 ################## EOF ##################
