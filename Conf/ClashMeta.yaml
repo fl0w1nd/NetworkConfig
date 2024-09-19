@@ -279,6 +279,13 @@ rule-providers:
     url: "https://ruleset.zcsouls.com/Rules/BT.list"
     interval: 86400
 
+  PrivateTracker:
+    type: http
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/PrivateTracker.list"
+    interval: 86400
+
 
 rules:
   - RULE-SET,OpenAi,💬OpenAi
@@ -302,6 +309,7 @@ rules:
   - RULE-SET,Nintendo,🎮游戏平台
   - RULE-SET,ProxyGFWlist,🚀节点选择
   - RULE-SET,Global,🚀节点选择
+  - RULE-SET,PrivateTracker,🎯全球直连
   - RULE-SET,ChinaIp,🎯全球直连
   - RULE-SET,ChinaDomain,🎯全球直连
   - RULE-SET,ChinaCompanyIp,🎯全球直连
