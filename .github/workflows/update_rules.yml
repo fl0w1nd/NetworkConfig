@@ -21,6 +21,9 @@ jobs:
     - name: Fetch OpenAi.list
       run: curl -o Rules/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
 
+    - name: Fetch Twitter.list
+      run: curl -o Rules/Twitter.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list   
+
     - name: Fetch GoogleFCM.list
       run: curl -o Rules/GoogleFCM.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
 

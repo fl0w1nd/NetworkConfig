@@ -25,6 +25,7 @@
   * [MicrosoftCDN](./Rules/MicrosoftCDN.list)
   * [Apple](./Rules/Apple.list)
   * [AppleCDN](./Rules/AppleCDN.list)
+  * [Twitter](./Rules/Twitter.list)  
   * [Telegram](./Rules/Telegram.list)
   * [Netflix](./Rules/Netflix.list)
   * [ProxyMedia](./Rules/ProxyMedia.list)
@@ -70,19 +71,19 @@
   <tbody>
     <tr>
       <td>DOMAIN</td>
-      <td>910</td>
+      <td>904</td>
     </tr>
     <tr>
       <td>DOMAIN-KEYWORD</td>
-      <td>95</td>
+      <td>96</td>
     </tr>
     <tr>
       <td>DOMAIN-SUFFIX</td>
-      <td>98520</td>
+      <td>99178</td>
     </tr>
     <tr>
       <td>IP-CIDR</td>
-      <td>7324</td>
+      <td>7329</td>
     </tr>
     <tr>
       <td>USER-AGENT</td>
@@ -98,7 +99,7 @@
     </tr>
     <tr>
       <td>TOTAL</td>
-      <td>106964</td>
+      <td>107622</td>
     </tr>
   </tbody>
 </table>
