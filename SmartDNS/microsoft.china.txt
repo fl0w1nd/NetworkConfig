@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - Microsoft CDN
-# Last Updated: 2024-10-26T19:57:15.741Z
-# Size: 22
+# Last Updated: 2025-01-14T13:43:54.613Z
+# Size: 21
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -15,7 +15,6 @@ this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
 fs.microsoft.com
 sdx.microsoft.com
 docs.microsoft.com
-build.microsoft.com
 learn.microsoft.com
 devblogs.microsoft.com
 download.microsoft.com
