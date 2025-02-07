@@ -1,6 +1,6 @@
 #########################################
 # Sukka's Ruleset - Microsoft CDN
-# Last Updated: 2025-01-17T12:44:34.371Z
+# Last Updated: 2025-02-06T14:31:22.687Z
 # Size: 21
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
@@ -12,24 +12,24 @@
 #  - https://github.com/felixonmars/dnsmasq-china-list
 #########################################
 this_ruleset_is_made_by_sukkaw.ruleset.skk.moe
-fs.microsoft.com
-sdx.microsoft.com
-docs.microsoft.com
-learn.microsoft.com
-devblogs.microsoft.com
-download.microsoft.com
-developer.microsoft.com
-officecdn.microsoft.com
-cn.windowssearch.com
-ctldl.windowsupdate.com
-download.windowsupdate.com
-wscont1.apps.microsoft.com
-wscont2.apps.microsoft.com
-download.prss.microsoft.com
-download.visualstudio.microsoft.com
-res.cdn.office.net
-res-1.cdn.office.net
-storeedgefd.dsx.mp.microsoft.com
-dl.delivery.mp.microsoft.com
 statics.teams.cdn.office.net
+res-1.cdn.office.net
+res.cdn.office.net
+download.windowsupdate.com
+ctldl.windowsupdate.com
+cn.windowssearch.com
+download.visualstudio.microsoft.com
+officecdn.microsoft.com
+developer.microsoft.com
+download.microsoft.com
+devblogs.microsoft.com
+learn.microsoft.com
+download.prss.microsoft.com
+docs.microsoft.com
+wscont2.apps.microsoft.com
+wscont1.apps.microsoft.com
+sdx.microsoft.com
+dl.delivery.mp.microsoft.com
+storeedgefd.dsx.mp.microsoft.com
+fs.microsoft.com
 ################## EOF ##################
