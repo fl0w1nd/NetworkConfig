@@ -8,3 +8,4 @@ DOMAIN,steamusercontent-a.akamaihd.net
 DOMAIN,steamuserimages-a.akamaihd.net
 DOMAIN,steampipe.akamaized.net
 DOMAIN,store.steampowered.com
+DOMAIN-SUFFIX,fastly.steamstatic.com
