@@ -102,6 +102,10 @@ jobs:
       run: |
         curl -o Rules/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
         cp Rules/ProxyMedia.list Rules/Clash\ Meta/ProxyMedia.list
+        # 删除 # AI 区块
+        awk '/^# AI/{flag=1;next}/^#/{flag=0} !flag' Rules/Clash\ Meta/ProxyMedia.list > tmp && mv tmp Rules/Clash\ Meta/ProxyMedia.list
+        # 删除 # OpenAi 区块
+        awk '/^# OpenAi/{flag=1;next}/^#/{flag=0} !flag' Rules/Clash\ Meta/ProxyMedia.list > tmp && mv tmp Rules/Clash\ Meta/ProxyMedia.list
         sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/ProxyMedia.list
         sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/ProxyMedia.list
 
