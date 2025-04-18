@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - General Global Services
-# Last Updated: 2025-04-16T16:25:23.850Z
-# Size: 853
+# Last Updated: 2025-04-18T03:12:02.945Z
+# Size: 859
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -133,6 +133,7 @@ DOMAIN-SUFFIX,kde.org
 DOMAIN-SUFFIX,eu.org
 DOMAIN-SUFFIX,minecraft-services.net
 DOMAIN-SUFFIX,minecraftforum.net
+DOMAIN-SUFFIX,hubspotstarter.net
 DOMAIN-SUFFIX,cloudfunctions.net
 DOMAIN-SUFFIX,azurewebsites.net
 DOMAIN-SUFFIX,azure-mobile.net
@@ -174,6 +175,7 @@ DOMAIN-SUFFIX,nhentai.net
 DOMAIN-SUFFIX,mullvad.net
 DOMAIN-SUFFIX,kisscos.net
 DOMAIN-SUFFIX,jkforum.net
+DOMAIN-SUFFIX,hsforms.net
 DOMAIN-SUFFIX,edgeapp.net
 DOMAIN-SUFFIX,behance.net
 DOMAIN-SUFFIX,apkpure.net
@@ -215,6 +217,7 @@ DOMAIN-SUFFIX,dev
 DOMAIN-SUFFIX,returnyoutubedislikeapi.com
 DOMAIN-SUFFIX,privateinternetaccess.com
 DOMAIN-SUFFIX,returnyoutubedislike.com
+DOMAIN-SUFFIX,hubspotlinksstarter.com
 DOMAIN-SUFFIX,lineshoppingseller.com
 DOMAIN-SUFFIX,minecraftservices.com
 DOMAIN-SUFFIX,githubusercontent.com
@@ -258,7 +261,6 @@ DOMAIN-SUFFIX,androidpolice.com
 DOMAIN-SUFFIX,xhamsterlive.com
 DOMAIN-SUFFIX,vpnunlimited.com
 DOMAIN-SUFFIX,surfsharkdns.com
-DOMAIN,media.steampowered.com
 DOMAIN-SUFFIX,shutterstock.com
 DOMAIN-SUFFIX,redditstatic.com
 DOMAIN-SUFFIX,ovpnleaktest.com
@@ -478,6 +480,7 @@ DOMAIN-SUFFIX,jotform.com
 DOMAIN-SUFFIX,javwind.com
 DOMAIN-SUFFIX,javmost.com
 DOMAIN-SUFFIX,intodns.com
+DOMAIN-SUFFIX,hsforms.com
 DOMAIN-SUFFIX,hostloc.com
 DOMAIN-SUFFIX,hetzner.com
 DOMAIN-SUFFIX,gumroad.com
@@ -623,6 +626,7 @@ DOMAIN-SUFFIX,debug.com
 DOMAIN-SUFFIX,cpuid.com
 DOMAIN-SUFFIX,cisco.com
 DOMAIN-SUFFIX,chess.com
+DOMAIN-SUFFIX,cdnjs.com
 DOMAIN-SUFFIX,bycsi.com
 DOMAIN-SUFFIX,bybit.com
 DOMAIN-SUFFIX,brave.com
@@ -772,6 +776,7 @@ DOMAIN-SUFFIX,statuspage.io
 DOMAIN-SUFFIX,prometheus.io
 DOMAIN-SUFFIX,greenhouse.io
 DOMAIN-SUFFIX,globalping.io
+DOMAIN-SUFFIX,canarymail.io
 DOMAIN-SUFFIX,shattered.io
 DOMAIN-SUFFIX,grammarly.io
 DOMAIN-SUFFIX,etherscan.io
@@ -813,6 +818,7 @@ DOMAIN-SUFFIX,fly.io
 DOMAIN-SUFFIX,cnn.io
 DOMAIN-SUFFIX,gh.io
 DOMAIN-SUFFIX,in
+DOMAIN-SUFFIX,spot.im
 DOMAIN-SUFFIX,npm.im
 DOMAIN-SUFFIX,imo.im
 DOMAIN-SUFFIX,hk
