@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - General Global Services
-# Last Updated: 2025-04-20T23:23:29.758Z
-# Size: 860
+# Last Updated: 2025-04-22T15:02:47.921Z
+# Size: 866
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -13,13 +13,16 @@ DOMAIN-SUFFIX,community
 DOMAIN-SUFFIX,network
 DOMAIN-SUFFIX,x.company
 DOMAIN-SUFFIX,social
+DOMAIN-SUFFIX,animes.garden
 DOMAIN-SUFFIX,ant.design
+DOMAIN-SUFFIX,chrome
 DOMAIN-SUFFIX,watch
 DOMAIN-SUFFIX,tools
 DOMAIN-SUFFIX,archive.today
 DOMAIN-SUFFIX,javhd.today
 DOMAIN-SUFFIX,party
 DOMAIN-SUFFIX,smashing.media
+DOMAIN-SUFFIX,github.media
 DOMAIN-SUFFIX,discourse.group
 DOMAIN-SUFFIX,sketch.cloud
 DOMAIN-SUFFIX,matters.town
@@ -188,6 +191,7 @@ DOMAIN-SUFFIX,dnsleak.asn247.net
 DOMAIN-SUFFIX,akamai.net
 DOMAIN-SUFFIX,whoer.net
 DOMAIN-SUFFIX,tfbnw.net
+DOMAIN-SUFFIX,reimu.net
 DOMAIN-SUFFIX,quad9.net
 DOMAIN-SUFFIX,pximg.net
 DOMAIN-SUFFIX,pixiv.net
@@ -206,6 +210,7 @@ DOMAIN-SUFFIX,wsj.net
 DOMAIN-SUFFIX,arc.net
 DOMAIN-SUFFIX,sf.net
 DOMAIN-SUFFIX,he.net
+DOMAIN-SUFFIX,ddys.mov
 DOMAIN-SUFFIX,moe
 DOMAIN-SUFFIX,mil
 DOMAIN-SUFFIX,lol
@@ -637,6 +642,7 @@ DOMAIN-SUFFIX,bblmw.com
 DOMAIN-SUFFIX,axios.com
 DOMAIN-SUFFIX,avgle.com
 DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,photoshop.adobe.com
 DOMAIN,ccmdl.adobe.com
 DOMAIN-SUFFIX,500px.com
 DOMAIN-SUFFIX,3movs.com
