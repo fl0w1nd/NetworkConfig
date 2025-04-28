@@ -1,104 +1,474 @@
-      <!DOCTYPE html>
-        <html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="dark-mode-transition">
 
-        <head>
-          <meta charset="utf-8">
-          <title>Ruleset Server</title>
-          <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-          <link href="favicon.png" rel="icon" type="image/png">
-          <meta name="description" content="自用收集代理工具规则集">
+<head>
+  <meta charset="utf-8">
+  <title>Ruleset Server</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <link href="favicon.png" rel="icon" type="image/png">
+  <meta name="description" content="自用收集代理工具规则集">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1095c1',
+            secondary: '#596b78',
+          }
+        }
+      }
+    }
 
-          <link rel="stylesheet" href="style.css" />
-        </head>
-      <body>
-        <main class="container">
-          <h1>fl0w1nd's Ruleset Server</h1>
-          <p>
-            The website design style comes from <a href="https://ruleset.skk.moe/">Sukka Ruleset</a>
-            </br>
-            Made by <a href="https://nav.zcsouls.com">fl0w1nd</a> | <a href="https://github.com/fl0w1nd/NetworkConfig/">Source @ GitHub</a>
-            </br>
-            The ruleset comes from <a href="https://ruleset.skk.moe/">Sukka Ruleset</a> | <a href="https://github.com/ACL4SSR/ACL4SSR">ACL4SSR</a> | <a href="https://github.com/Loyalsoldier/v2ray-rules-dat">v2ray-rules-dat</a> | <a href="https://github.com/felixonmars/dnsmasq-china-list">dnsmasq-china-list</a> 
-          </p>
-          <p>Last Update: 2025-04-26 11:29</p>
-          <br>
-    <ul class="directory-list">
+    // 检查系统是否为暗模式，或用户是否已设置暗模式
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 dark-mode-transition">
+  <div class="min-h-screen">
+    <header class="bg-white dark:bg-gray-800 shadow dark-mode-transition">
+      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-bold text-gray-900 dark:text-white dark-mode-transition">fl0w1nd's Ruleset Server</h1>
+          <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+            <i id="theme-toggle-dark-icon" class="fas fa-moon hidden"></i>
+            <i id="theme-toggle-light-icon" class="fas fa-sun hidden"></i>
+          </button>
+        </div>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 dark-mode-transition">
+          Made by <a href="https://nav.zcsouls.com" class="text-primary hover:underline">fl0w1nd</a> | <a href="https://github.com/fl0w1nd/NetworkConfig/" class="text-primary hover:underline">Source @ GitHub</a>
+        </p>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-500">Last Update: 2025-04-26 11:29</p>
+      </div>
+    </header>
 
+    <main class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <!-- 客户端选择器 -->
+      <div class="mb-6">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg divide-y divide-gray-200 dark:divide-gray-700 dark-mode-transition">
+          <div class="px-4 py-5 sm:px-6">
+            <h2 class="text-lg font-medium text-gray-900 dark:text-white dark-mode-transition">选择代理客户端类型</h2>
+          </div>
+          <div class="px-4 py-5 sm:p-6">
+            <div class="flex flex-wrap gap-4">
+              <button id="clash-meta-btn" class="client-btn inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary active">
+                <i class="fas fa-globe mr-2"></i> Clash Meta
+              </button>
+              <button id="shadowrocket-btn" class="client-btn inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-md shadow-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark-mode-transition">
+                <i class="fas fa-rocket mr-2"></i> Shadowrocket
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <li class="folder">
-        Conf
-        <ul>
-          <li><a class="file directory-list-file" href="Conf/Shadowrocket.conf">Shadowrocket.conf</a></li>
-          <li><a class="file directory-list-file" href="Conf/ClashMeta.yaml">ClashMeta.yaml</a></li>
-          <li><a class="file directory-list-file" href="Conf/Surge.conf">Surge.conf</a></li>
-        </ul>
-      </li>
+      <!-- 配置文件 -->
+      <div id="config-section" class="mb-6">
+        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg dark-mode-transition">
+          <div class="px-4 py-5 sm:px-6">
+            <h2 class="text-lg font-medium text-gray-900 dark:text-white dark-mode-transition">配置模板</h2>
+          </div>
+          <div class="px-4 py-5 sm:p-6">
+            <div id="clash-meta-config" class="config-item">
+              <div class="flex items-center justify-between p-4 mb-4 bg-gray-50 dark:bg-gray-700 rounded-lg rule-card dark-mode-transition">
+                <div class="flex items-center">
+                  <img src="icon/ClashMeta.png" alt="Clash Meta" class="w-8 h-8 mr-3" onerror="this.src='icon/default.png'">
+                  <div>
+                    <h3 class="text-md font-semibold dark-mode-transition">ClashMeta.yaml</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 dark-mode-transition">Clash Meta 配置模板</p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="preview-btn inline-flex items-center p-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark-mode-transition" data-path="Conf/ClashMeta.yaml" data-name="ClashMeta.yaml">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button onclick="copyToClipboard('Conf/ClashMeta.yaml')" class="inline-flex items-center p-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark-mode-transition">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div id="shadowrocket-config" class="config-item hidden">
+              <div class="flex items-center justify-between p-4 mb-4 bg-gray-50 dark:bg-gray-700 rounded-lg rule-card dark-mode-transition">
+                <div class="flex items-center">
+                  <img src="icon/Shadowrocket.png" alt="Shadowrocket" class="w-8 h-8 mr-3" onerror="this.src='icon/default.png'">
+                  <div>
+                    <h3 class="text-md font-semibold dark-mode-transition">Shadowrocket.conf</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400 dark-mode-transition">Shadowrocket 配置模板</p>
+                  </div>
+                </div>
+                <div class="flex gap-2">
+                  <button class="preview-btn inline-flex items-center p-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark-mode-transition" data-path="Conf/Shadowrocket.conf" data-name="Shadowrocket.conf">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button onclick="copyToClipboard('Conf/Shadowrocket.conf')" class="inline-flex items-center p-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 rounded-md border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark-mode-transition">
+                    <i class="fas fa-copy"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 规则列表 -->
+      <div class="bg-white dark:bg-gray-800 overflow-hidden shadow rounded-lg dark-mode-transition">
+        <div class="px-4 py-5 sm:px-6">
+          <h2 class="text-lg font-medium text-gray-900 dark:text-white dark-mode-transition">规则列表</h2>
+        </div>
+        <div class="px-4 py-5 sm:p-6">
+          <div id="clash-meta-rules" class="rules-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Clash Meta Rules will be populated here -->
+          </div>
+          <div id="shadowrocket-rules" class="rules-container hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <!-- Shadowrocket Rules will be populated here -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="bg-white dark:bg-gray-800 mt-8 dark-mode-transition">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-500 dark:text-gray-400 dark-mode-transition">
+      <p>© 2025 fl0w1nd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 成功通知 -->
+  <div id="copy-notification" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-2 rounded-md shadow-lg opacity-0 transition-opacity duration-300">
+    已复制到剪贴板
+  </div>
+
+  <!-- 预览模态窗口 -->
+  <div id="preview-modal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl w-11/12 md:w-3/4 lg:w-2/3 max-h-[80vh] flex flex-col dark-mode-transition">
+      <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+        <h3 id="preview-title" class="text-lg font-medium text-gray-900 dark:text-white dark-mode-transition">规则预览</h3>
+        <button id="close-preview" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="p-4 overflow-auto flex-grow">
+        <pre id="preview-content" class="whitespace-pre-wrap text-sm text-gray-800 dark:text-gray-200 font-mono"></pre>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 规则数据
+    const rulesets = {
+      'clash-meta': [
+        { name: 'AppleCDN', path: 'Rules/Clash Meta/AppleCDN.list' },
+        { name: 'E-hentai', path: 'Rules/Clash Meta/E-hentai.list' },
+        { name: 'SteamCommunity', path: 'Rules/Clash Meta/SteamCommunity.list' },
+        { name: 'ChinaDomain', path: 'Rules/Clash Meta/ChinaDomain.list' },
+        { name: 'OpenAi', path: 'Rules/Clash Meta/OpenAi.list' },
+        { name: 'Origin', path: 'Rules/Clash Meta/Origin.list' },
+        { name: 'SteamCN', path: 'Rules/Clash Meta/SteamCN.list' },
+        { name: 'Apple', path: 'Rules/Clash Meta/Apple.list' },
+        { name: 'LocalAreaNetwork', path: 'Rules/Clash Meta/LocalAreaNetwork.list' },
+        { name: 'ChinaCompanyIp', path: 'Rules/Clash Meta/ChinaCompanyIp.list' },
+        { name: 'GoogleFCM', path: 'Rules/Clash Meta/GoogleFCM.list' },
+        { name: 'Twitter', path: 'Rules/Clash Meta/Twitter.list' },
+        { name: 'MicrosoftCDN', path: 'Rules/Clash Meta/MicrosoftCDN.list' },
+        { name: 'Bing', path: 'Rules/Clash Meta/Bing.list' },
+        { name: 'Microsoft', path: 'Rules/Clash Meta/Microsoft.list' },
+        { name: 'Sony', path: 'Rules/Clash Meta/Sony.list' },
+        { name: 'Epic', path: 'Rules/Clash Meta/Epic.list' },
+        { name: 'Telegram', path: 'Rules/Clash Meta/Telegram.list' },
+        { name: 'GoogleCN', path: 'Rules/Clash Meta/GoogleCN.list' },
+        { name: 'BT', path: 'Rules/Clash Meta/BT.list' },
+        { name: 'PrivateTracker', path: 'Rules/Clash Meta/PrivateTracker.list' },
+        { name: 'ProxyGFWlist', path: 'Rules/Clash Meta/ProxyGFWlist.list' },
+        { name: 'Global', path: 'Rules/Clash Meta/Global.list' },
+        { name: 'Google', path: 'Rules/Clash Meta/Google.list' },
+        { name: 'Nintendo', path: 'Rules/Clash Meta/Nintendo.list' },
+        { name: 'ProxyMedia', path: 'Rules/Clash Meta/ProxyMedia.list' },
+        { name: 'Download', path: 'Rules/Clash Meta/Download.list' },
+        { name: 'OneDrive', path: 'Rules/Clash Meta/OneDrive.list' },
+        { name: 'Netflix', path: 'Rules/Clash Meta/Netflix.list' }
+      ],
+      'shadowrocket': [
+        { name: 'AppleCDN', path: 'Rules/Shadowrocket/AppleCDN.list' },
+        { name: 'E-hentai', path: 'Rules/Shadowrocket/E-hentai.list' },
+        { name: 'SteamCommunity', path: 'Rules/Shadowrocket/SteamCommunity.list' },
+        { name: 'ChinaDomain', path: 'Rules/Shadowrocket/ChinaDomain.list' },
+        { name: 'OpenAi', path: 'Rules/Shadowrocket/OpenAi.list' },
+        { name: 'Origin', path: 'Rules/Shadowrocket/Origin.list' },
+        { name: 'SteamCN', path: 'Rules/Shadowrocket/SteamCN.list' },
+        { name: 'Apple', path: 'Rules/Shadowrocket/Apple.list' },
+        { name: 'LocalAreaNetwork', path: 'Rules/Shadowrocket/LocalAreaNetwork.list' },
+        { name: 'ChinaCompanyIp', path: 'Rules/Shadowrocket/ChinaCompanyIp.list' },
+        { name: 'GoogleFCM', path: 'Rules/Shadowrocket/GoogleFCM.list' },
+        { name: 'Twitter', path: 'Rules/Shadowrocket/Twitter.list' },
+        { name: 'MicrosoftCDN', path: 'Rules/Shadowrocket/MicrosoftCDN.list' },
+        { name: 'Bing', path: 'Rules/Shadowrocket/Bing.list' },
+        { name: 'Microsoft', path: 'Rules/Shadowrocket/Microsoft.list' },
+        { name: 'Sony', path: 'Rules/Shadowrocket/Sony.list' },
+        { name: 'Epic', path: 'Rules/Shadowrocket/Epic.list' },
+        { name: 'Telegram', path: 'Rules/Shadowrocket/Telegram.list' },
+        { name: 'GoogleCN', path: 'Rules/Shadowrocket/GoogleCN.list' },
+        { name: 'BT', path: 'Rules/Shadowrocket/BT.list' },
+        { name: 'PrivateTracker', path: 'Rules/Shadowrocket/PrivateTracker.list' },
+        { name: 'ProxyGFWlist', path: 'Rules/Shadowrocket/ProxyGFWlist.list' },
+        { name: 'Global', path: 'Rules/Shadowrocket/Global.list' },
+        { name: 'Google', path: 'Rules/Shadowrocket/Google.list' },
+        { name: 'Nintendo', path: 'Rules/Shadowrocket/Nintendo.list' },
+        { name: 'ProxyMedia', path: 'Rules/Shadowrocket/ProxyMedia.list' },
+        { name: 'Download', path: 'Rules/Shadowrocket/Download.list' },
+        { name: 'OneDrive', path: 'Rules/Shadowrocket/OneDrive.list' },
+        { name: 'Netflix', path: 'Rules/Shadowrocket/Netflix.list' }
+      ]
+    };
+
+    // 创建规则卡片
+    function createRuleCards() {
+      const clashMetaContainer = document.getElementById('clash-meta-rules');
+      const shadowrocketContainer = document.getElementById('shadowrocket-rules');
       
-      <li class="folder">
-        Rules
-        <ul>
-          <li><a class="file directory-list-file" href="Rules/AppleCDN.list">AppleCDN.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/ChinaIp.list">ChinaIp.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/E-hentai.list">E-hentai.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/SteamCommunity.list">SteamCommunity.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/ChinaDomain.list">ChinaDomain.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/OpenAi.list">OpenAi.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Origin.list">Origin.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/SteamCN.list">SteamCN.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Apple.list">Apple.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/ProxyMedia.list">ProxyMedia.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/LocalAreaNetwork.list">LocalAreaNetwork.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/ChinaCompanyIp.list">ChinaCompanyIp.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Direct.list">Direct.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/GoogleFCM.list">GoogleFCM.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Twitter.list">Twitter.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Download.list">Download.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/MicrosoftCDN.list">MicrosoftCDN.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Bing.list">Bing.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Microsoft.list">Microsoft.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/OneDrive.list">OneDrive.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Sony.list">Sony.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Epic.list">Epic.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Netflix.list">Netflix.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Telegram.list">Telegram.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/GoogleCN.list">GoogleCN.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/BT.list">BT.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/PrivateTracker.list">PrivateTracker.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/ProxyGFWlist.list">ProxyGFWlist.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Global.list">Global.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Google.list">Google.list</a></li>
-          <li><a class="file directory-list-file" href="Rules/Nintendo.list">Nintendo.list</a></li>
-          <li class="folder">
-            Personal Rules
-            <ul>
-              <li><a class="file directory-list-file" href="Rules/Personal Rules/PersonalServer.list">PersonalServer.list</a></li>
-            </ul>
-          </li>
-          <li class="folder">
-            Clash Meta
-            <ul>
-              <li><a class="file directory-list-file" href="Rules/Clash Meta/ProxyMedia.list">ProxyMedia.list</a></li>
-              <li><a class="file directory-list-file" href="Rules/Clash Meta/Download.list">Download.list</a></li>
-              <li><a class="file directory-list-file" href="Rules/Clash Meta/OneDrive.list">OneDrive.list</a></li>
-              <li><a class="file directory-list-file" href="Rules/Clash Meta/Netflix.list">Netflix.list</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      // 清空容器
+      clashMetaContainer.innerHTML = '';
+      shadowrocketContainer.innerHTML = '';
       
-      <li class="folder">
-        SmartDNS
-        <ul>
-          <li><a class="file directory-list-file" href="SmartDNS/google.china.txt">google.china.txt</a></li>
-          <li><a class="file directory-list-file" href="SmartDNS/accelerated-domains.china.txt">accelerated-domains.china.txt</a></li>
-          <li><a class="file directory-list-file" href="SmartDNS/apple.china.txt">apple.china.txt</a></li>
-          <li><a class="file directory-list-file" href="SmartDNS/gfw.txt">gfw.txt</a></li>
-          <li><a class="file directory-list-file" href="SmartDNS/microsoft.china.txt">microsoft.china.txt</a></li>
-        </ul>
-      </li>
+      // 创建 Clash Meta 规则卡片
+      rulesets['clash-meta'].forEach(rule => {
+        const card = createRuleCard(rule, 'clash-meta');
+        clashMetaContainer.appendChild(card);
+      });
+      
+      // 创建 Shadowrocket 规则卡片
+      rulesets['shadowrocket'].forEach(rule => {
+        const card = createRuleCard(rule, 'shadowrocket');
+        shadowrocketContainer.appendChild(card);
+      });
+    }
+    
+    // 创建单个规则卡片
+    function createRuleCard(rule, clientType) {
+      const card = document.createElement('div');
+      card.className = 'bg-gray-50 dark:bg-gray-700 overflow-hidden rounded-lg shadow-sm hover:shadow transition rule-card dark-mode-transition';
+      
+      const ruleUrl = window.location.origin + '/' + rule.path;
+      const iconPath = `icon/${rule.name}.png`;
+      
+      card.innerHTML = `
+        <div class="px-4 py-5 sm:p-6">
+          <div class="flex items-center mb-4">
+            <img src="${iconPath}" alt="${rule.name}" class="w-8 h-8 mr-3" onerror="this.src='icon/default.png'">
+            <h3 class="text-md font-semibold truncate dark-mode-transition">${rule.name}</h3>
+          </div>
+          <div class="mt-4 flex justify-between">
+            <button class="preview-btn inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 dark-mode-transition" data-path="${rule.path}" data-name="${rule.name}">
+              <i class="fas fa-eye mr-1"></i> 预览
+            </button>
+            <button onclick="copyToClipboard('${rule.path}')" class="copy-btn inline-flex items-center px-3 py-1.5 text-xs font-medium rounded-md text-white bg-primary hover:bg-primary/90">
+              <i class="fas fa-copy mr-1"></i> 复制链接
+            </button>
+          </div>
+        </div>
+      `;
+      
+      return card;
+    }
+    
+    // 获取并显示规则内容
+    async function previewRule(path, name) {
+      const modal = document.getElementById('preview-modal');
+      const content = document.getElementById('preview-content');
+      const title = document.getElementById('preview-title');
+      
+      title.textContent = `${name} 规则预览`;
+      content.textContent = '加载中...';
+      modal.classList.remove('hidden');
+      
+      try {
+        const response = await fetch(path);
+        if (response.ok) {
+          const text = await response.text();
+          content.textContent = text;
+        } else {
+          content.textContent = `加载失败: ${response.status} ${response.statusText}`;
+        }
+      } catch (error) {
+        content.textContent = `加载错误: ${error.message}`;
+      }
+    }
+    
+    // 复制到剪贴板
+    function copyToClipboard(path) {
+      const fullUrl = window.location.origin + '/' + path;
+      navigator.clipboard.writeText(fullUrl).then(() => {
+        // 添加复制动画
+        const btns = document.querySelectorAll('.copy-btn');
+        btns.forEach(btn => {
+          if (btn.innerHTML.includes(path.split('/').pop())) {
+            btn.classList.add('copy-animation');
+            setTimeout(() => {
+              btn.classList.remove('copy-animation');
+            }, 500);
+          }
+        });
+        
+        // 显示成功通知
+        const notification = document.getElementById('copy-notification');
+        notification.classList.add('notification-animation');
+        notification.style.opacity = '1';
+        setTimeout(() => {
+          notification.style.opacity = '0';
+          notification.classList.remove('notification-animation');
+        }, 2000);
+      });
+    }
+    
+    // 切换客户端类型
+    function switchClientType(type) {
+      const clashMetaBtn = document.getElementById('clash-meta-btn');
+      const shadowrocketBtn = document.getElementById('shadowrocket-btn');
+      const clashMetaConfig = document.getElementById('clash-meta-config');
+      const shadowrocketConfig = document.getElementById('shadowrocket-config');
+      const clashMetaRules = document.getElementById('clash-meta-rules');
+      const shadowrocketRules = document.getElementById('shadowrocket-rules');
+      
+      // 添加点击效果
+      if (type === 'clash-meta') {
+        clashMetaBtn.classList.add('btn-click');
+        setTimeout(() => { clashMetaBtn.classList.remove('btn-click'); }, 200);
+      } else {
+        shadowrocketBtn.classList.add('btn-click');
+        setTimeout(() => { shadowrocketBtn.classList.remove('btn-click'); }, 200);
+      }
+      
+      if (type === 'clash-meta') {
+        clashMetaBtn.classList.add('bg-primary', 'text-white');
+        clashMetaBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300', 'dark:bg-gray-800', 'dark:text-gray-300');
+        shadowrocketBtn.classList.add('bg-white', 'text-gray-700', 'border-gray-300', 'dark:bg-gray-800', 'dark:text-gray-300');
+        shadowrocketBtn.classList.remove('bg-primary', 'text-white');
+        
+        clashMetaConfig.classList.remove('hidden');
+        shadowrocketConfig.classList.add('hidden');
+        
+        clashMetaRules.classList.remove('hidden');
+        shadowrocketRules.classList.add('hidden');
+      } else {
+        shadowrocketBtn.classList.add('bg-primary', 'text-white');
+        shadowrocketBtn.classList.remove('bg-white', 'text-gray-700', 'border-gray-300', 'dark:bg-gray-800', 'dark:text-gray-300');
+        clashMetaBtn.classList.add('bg-white', 'text-gray-700', 'border-gray-300', 'dark:bg-gray-800', 'dark:text-gray-300');
+        clashMetaBtn.classList.remove('bg-primary', 'text-white');
+        
+        shadowrocketConfig.classList.remove('hidden');
+        clashMetaConfig.classList.add('hidden');
+        
+        shadowrocketRules.classList.remove('hidden');
+        clashMetaRules.classList.add('hidden');
+      }
+      
+      // 存储用户选择
+      localStorage.setItem('preferredClient', type);
+    }
+    
+    // 设置暗/亮模式
+    function handleThemeToggle() {
+      const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+      const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 
-    </ul>
-  </main>
+      // 根据当前主题状态切换
+      if (document.documentElement.classList.contains('dark')) {
+        themeToggleLightIcon.classList.remove('hidden');
+        themeToggleDarkIcon.classList.add('hidden');
+      } else {
+        themeToggleDarkIcon.classList.remove('hidden');
+        themeToggleLightIcon.classList.add('hidden');
+      }
+
+      // 切换主题
+      document.getElementById('theme-toggle').addEventListener('click', function() {
+        // 添加过渡效果
+        document.documentElement.classList.add('transition');
+        document.documentElement.classList.toggle('dark');
+        
+        // 切换图标
+        themeToggleDarkIcon.classList.toggle('hidden');
+        themeToggleLightIcon.classList.toggle('hidden');
+        
+        // 保存主题设置
+        if (document.documentElement.classList.contains('dark')) {
+          localStorage.theme = 'dark';
+        } else {
+          localStorage.theme = 'light';
+        }
+      });
+    }
+    
+    // 初始化
+    document.addEventListener('DOMContentLoaded', () => {
+      // 设置主题切换图标
+      handleThemeToggle();
+      
+      // 创建规则卡片
+      createRuleCards();
+      
+      // 绑定按钮事件
+      document.getElementById('clash-meta-btn').addEventListener('click', () => {
+        switchClientType('clash-meta');
+      });
+      
+      document.getElementById('shadowrocket-btn').addEventListener('click', () => {
+        switchClientType('shadowrocket');
+      });
+      
+      // 关闭预览模态窗口
+      document.getElementById('close-preview').addEventListener('click', () => {
+        document.getElementById('preview-modal').classList.add('hidden');
+      });
+      
+      // 点击模态窗口背景关闭
+      document.getElementById('preview-modal').addEventListener('click', (e) => {
+        if (e.target === document.getElementById('preview-modal')) {
+          document.getElementById('preview-modal').classList.add('hidden');
+        }
+      });
+      
+      // 绑定预览按钮点击事件 (使用事件委托)
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.preview-btn')) {
+          const btn = e.target.closest('.preview-btn');
+          const path = btn.dataset.path;
+          const name = btn.dataset.name;
+          previewRule(path, name);
+        }
+      });
+      
+      // 加载用户之前选择的客户端类型
+      const preferredClient = localStorage.getItem('preferredClient');
+      if (preferredClient === 'shadowrocket') {
+        switchClientType('shadowrocket');
+      } else {
+        // 默认选择 Clash Meta
+        switchClientType('clash-meta');
+      }
+      
+      // 添加按钮点击效果
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach(button => {
+        button.addEventListener('mousedown', function() {
+          this.classList.add('btn-click');
+        });
+        button.addEventListener('mouseup', function() {
+          this.classList.remove('btn-click');
+        });
+        button.addEventListener('mouseleave', function() {
+          this.classList.remove('btn-click');
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

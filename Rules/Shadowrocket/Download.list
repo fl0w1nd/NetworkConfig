@@ -1,0 +1,29 @@
+# Mac Download
+PROCESS-NAME,aria2c.exe
+PROCESS-NAME,fdm.exe
+PROCESS-NAME,Folx.exe
+PROCESS-NAME,NetTransport.exe
+PROCESS-NAME,Thunder.exe
+PROCESS-NAME,Transmission.exe
+PROCESS-NAME,uTorrent.exe
+PROCESS-NAME,WebTorrent.exe
+PROCESS-NAME,WebTorrent Helper.exe
+PROCESS-NAME,qbittorrent.exe
+# bt
+DOMAIN-SUFFIX,smtp
+DOMAIN-KEYWORD,aria2
+DOMAIN-REGEX,(Subject|HELO|SMTP)
+DOMAIN-REGEX,(api|ps|sv|offnavi|newvector|ulog.imap|newloc)(.map|).(baidu|n.shifen).com
+DOMAIN-REGEX,(.+.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan).(cn|com)
+DOMAIN-REGEX,(.+.)?(torrent|announce.php?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|xunlei)(..+)?
+# XunLei
+DOMAIN-REGEX,(.?)(xunlei|sandai|Thunder|XLLiveUD)(.)
+PROCESS-NAME,DownloadService.exe
+# 360
+DOMAIN-REGEX,(.+\.|^)(360|so)\.(cn|com)
+# Tencent Weiyun
+PROCESS-NAME,Weiyun.exe
+#Baidu disk
+PROCESS-NAME,baidunetdisk.exe
+# Xbox
+DOMAIN-REGEX,assets\d+\.xboxlive\.(com|cn)

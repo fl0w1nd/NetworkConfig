@@ -94,35 +94,35 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/OpenAi.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/OpenAi.list"
     interval: 86400
 
   GoogleFCM:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/GoogleFCM.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/GoogleFCM.list"
     interval: 86400
 
   Google:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Google.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Google.list"
     interval: 86400
 
   SteamCommunity:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/SteamCommunity.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/SteamCommunity.list"
     interval: 86400
 
   Bing:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Bing.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Bing.list"
     interval: 86400
 
   OneDrive:
@@ -136,35 +136,35 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Microsoft.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Microsoft.list"
     interval: 86400
 
   MicrosoftCDN:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/MicrosoftCDN.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/MicrosoftCDN.list"
     interval: 86400
 
   Apple:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Apple.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Apple.list"
     interval: 86400
     
   AppleCDN:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/AppleCDN.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/AppleCDN.list"
     interval: 86400
     
   Telegram:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Telegram.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Telegram.list"
     interval: 86400
 
   Netflix:
@@ -185,77 +185,70 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/SteamCN.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/SteamCN.list"
     interval: 86400
 
   Epic:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Epic.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Epic.list"
     interval: 86400
 
   Origin:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Origin.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Origin.list"
     interval: 86400
 
   Nintendo:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Nintendo.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Nintendo.list"
     interval: 86400
 
   Sony:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Sony.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Sony.list"
     interval: 86400
 
   ProxyGFWlist:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/ProxyGFWlist.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ProxyGFWlist.list"
     interval: 86400
 
   Global:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/Global.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Global.list"
     interval: 86400
 
   GoogleCN:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/GoogleCN.list"
-    interval: 86400
-
-  ChinaIp:
-    type: http
-    behavior: classical
-    format: text
-    url: "https://ruleset.zcsouls.com/Rules/ChinaIp.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/GoogleCN.list"
     interval: 86400
 
   ChinaDomain:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/ChinaDomain.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ChinaDomain.list"
     interval: 86400
 
   ChinaCompanyIp:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/ChinaCompanyIp.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ChinaCompanyIp.list"
     interval: 86400
 
   Download:
@@ -269,21 +262,21 @@ rule-providers:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/LocalAreaNetwork.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/LocalAreaNetwork.list"
     interval: 86400
 
   BT:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/BT.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/BT.list"
     interval: 86400
 
   PrivateTracker:
     type: http
     behavior: classical
     format: text
-    url: "https://ruleset.zcsouls.com/Rules/PrivateTracker.list"
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/PrivateTracker.list"
     interval: 86400
 
 
@@ -310,7 +303,6 @@ rules:
   - RULE-SET,ProxyGFWlist,🚀节点选择
   - RULE-SET,Global,🚀节点选择
   - RULE-SET,PrivateTracker,🎯全球直连
-  - RULE-SET,ChinaIp,🎯全球直连
   - RULE-SET,ChinaDomain,🎯全球直连
   - RULE-SET,ChinaCompanyIp,🎯全球直连
   - RULE-SET,Download,🎯全球直连

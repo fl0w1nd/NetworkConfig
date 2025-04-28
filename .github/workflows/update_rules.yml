@@ -19,105 +19,140 @@ jobs:
         node-version: 20
 
     - name: Fetch OpenAi.list
-      run: curl -o Rules/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+      run: |
+        curl -o Rules/Clash\ Meta/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+        cp Rules/Clash\ Meta/OpenAi.list Rules/Shadowrocket/OpenAi.list
 
     - name: Fetch Twitter.list
-      run: curl -o Rules/Twitter.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list   
+      run: |
+        curl -o Rules/Clash\ Meta/Twitter.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitter/Twitter.list   
+        cp Rules/Clash\ Meta/Twitter.list Rules/Shadowrocket/Twitter.list
 
     - name: Fetch GoogleFCM.list
-      run: curl -o Rules/GoogleFCM.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+      run: |
+        curl -o Rules/Clash\ Meta/GoogleFCM.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
+        cp Rules/Clash\ Meta/GoogleFCM.list Rules/Shadowrocket/GoogleFCM.list
 
     - name: Fetch Google.list
-      run: curl -o Rules/Google.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/293afd1572e97a1d6adbaee34050868d696e3e08/rule/Clash/Google/Google.list
+      run: |
+        curl -o Rules/Clash\ Meta/Google.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/293afd1572e97a1d6adbaee34050868d696e3e08/rule/Clash/Google/Google.list
+        cp Rules/Clash\ Meta/Google.list Rules/Shadowrocket/Google.list
 
     - name: Fetch PrivateTracker.list
-      run: curl -o Rules/PrivateTracker.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/293afd1572e97a1d6adbaee34050868d696e3e08/rule/Clash/PrivateTracker/PrivateTracker.list
+      run: |
+        curl -o Rules/Clash\ Meta/PrivateTracker.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/293afd1572e97a1d6adbaee34050868d696e3e08/rule/Clash/PrivateTracker/PrivateTracker.list
+        cp Rules/Clash\ Meta/PrivateTracker.list Rules/Shadowrocket/PrivateTracker.list
 
-    - name: Fetch direct.txt
-      run: curl -o Rules/Direct.list https://raw.githubusercontent.com/Loyalsoldier/surge-rules/release/ruleset/direct.txt
-      
     - name: Fetch Bing.list
-      run: curl -o Rules/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+      run: |
+        curl -o Rules/Clash\ Meta/Bing.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
+        cp Rules/Clash\ Meta/Bing.list Rules/Shadowrocket/Bing.list
 
     - name: Fetch Microsoft.list
-      run: curl -o Rules/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+      run: |
+        curl -o Rules/Clash\ Meta/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+        cp Rules/Clash\ Meta/Microsoft.list Rules/Shadowrocket/Microsoft.list
 
     - name: Fetch MicrosoftCDN.conf
-      run: curl -o Rules/MicrosoftCDN.list https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
+      run: |
+        curl -o Rules/Clash\ Meta/MicrosoftCDN.list https://ruleset.skk.moe/List/non_ip/microsoft_cdn.conf
+        cp Rules/Clash\ Meta/MicrosoftCDN.list Rules/Shadowrocket/MicrosoftCDN.list
 
     - name: Fetch Apple.list
-      run: curl -o Rules/Apple.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+      run: |
+        curl -o Rules/Clash\ Meta/Apple.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
+        cp Rules/Clash\ Meta/Apple.list Rules/Shadowrocket/Apple.list
 
     - name: Fetch AppleCDN.conf
-      run: curl -o Rules/AppleCDN.list https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
+      run: |
+        curl -o Rules/Clash\ Meta/AppleCDN.list https://ruleset.skk.moe/List/non_ip/apple_cdn.conf
+        cp Rules/Clash\ Meta/AppleCDN.list Rules/Shadowrocket/AppleCDN.list
 
     - name: Fetch Epic.list
-      run: curl -o Rules/Epic.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+      run: |
+        curl -o Rules/Clash\ Meta/Epic.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Epic.list
+        cp Rules/Clash\ Meta/Epic.list Rules/Shadowrocket/Epic.list
 
     - name: Fetch Origin.list
-      run: curl -o Rules/Origin.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+      run: |
+        curl -o Rules/Clash\ Meta/Origin.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+        cp Rules/Clash\ Meta/Origin.list Rules/Shadowrocket/Origin.list
 
     - name: Fetch Nintendo.list
-      run: curl -o Rules/Nintendo.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+      run: |
+        curl -o Rules/Clash\ Meta/Nintendo.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Nintendo.list
+        cp Rules/Clash\ Meta/Nintendo.list Rules/Shadowrocket/Nintendo.list
 
     - name: Fetch Sony.list
-      run: curl -o Rules/Sony.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+      run: |
+        curl -o Rules/Clash\ Meta/Sony.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
+        cp Rules/Clash\ Meta/Sony.list Rules/Shadowrocket/Sony.list
 
     - name: Fetch ProxyGFWlist.list
-      run: curl -o Rules/ProxyGFWlist.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+      run: |
+        curl -o Rules/Clash\ Meta/ProxyGFWlist.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
+        cp Rules/Clash\ Meta/ProxyGFWlist.list Rules/Shadowrocket/ProxyGFWlist.list
 
     - name: Fetch global.txt
-      run: curl -o Rules/Global.list https://ruleset.skk.moe/Clash/non_ip/global.txt
+      run: |
+        curl -o Rules/Clash\ Meta/Global.list https://ruleset.skk.moe/Clash/non_ip/global.txt
+        cp Rules/Clash\ Meta/Global.list Rules/Shadowrocket/Global.list
 
     - name: Fetch GoogleCN.list
-      run: curl -o Rules/GoogleCN.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
-
-    - name: Fetch ChinaIp.list
-      run: curl -o Rules/ChinaIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list
+      run: |
+        curl -o Rules/Clash\ Meta/GoogleCN.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
+        cp Rules/Clash\ Meta/GoogleCN.list Rules/Shadowrocket/GoogleCN.list
 
     - name: Fetch ChinaDomain.list
-      run: curl -o Rules/ChinaDomain.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+      run: |
+        curl -o Rules/Clash\ Meta/ChinaDomain.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
+        cp Rules/Clash\ Meta/ChinaDomain.list Rules/Shadowrocket/ChinaDomain.list
 
     - name: Fetch ChinaCompanyIp.list
-      run: curl -o Rules/ChinaCompanyIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+      run: |
+        curl -o Rules/Clash\ Meta/ChinaCompanyIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+        cp Rules/Clash\ Meta/ChinaCompanyIp.list Rules/Shadowrocket/ChinaCompanyIp.list
 
     - name: Fetch LocalAreaNetwork.list
-      run: curl -o Rules/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
-
-    - name: Fetch OneDrive.list
       run: |
-        curl -o Rules/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
-        cp Rules/OneDrive.list Rules/Clash\ Meta/OneDrive.list
-        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/OneDrive.list
-        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/OneDrive.list
+        curl -o Rules/Clash\ Meta/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
+        cp Rules/Clash\ Meta/LocalAreaNetwork.list Rules/Shadowrocket/LocalAreaNetwork.list
 
+    - name: Fetch and Process OneDrive.list
+      run: |
+        curl -o Rules/Shadowrocket/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+        cp Rules/Shadowrocket/OneDrive.list Rules/Clash\ Meta/OneDrive.list
+        # 替换 USER-AGENT 为 IN-USER，并删除以 URL-REGEX 开头的行
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/OneDrive.list
+        sed -i '/^URL-REGEX/d' Rules/Clash\ Meta/OneDrive.list
+      
     - name: Fetch Netflix.list
       run: |
-        curl -o Rules/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-        cp Rules/Netflix.list Rules/Clash\ Meta/Netflix.list
+        curl -o Rules/Shadowrocket/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+        cp Rules/Shadowrocket/Netflix.list Rules/Clash\ Meta/Netflix.list
         sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Netflix.list
-        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/Netflix.list
+        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/Netflix.list
 
     - name: Fetch ProxyMedia.list
       run: |
-        curl -o Rules/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
+        curl -o Rules/Shadowrocket/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
         # 删除 # AI 区块
-        awk '/^# AI/{flag=1;next}/^#/{flag=0} !flag' Rules/ProxyMedia.list > tmp && mv tmp Rules/ProxyMedia.list
+        awk '/^# AI/{flag=1;next}/^#/{flag=0} !flag' Rules/Shadowrocket/ProxyMedia.list > tmp && mv tmp Rules/Shadowrocket/ProxyMedia.list
         # 删除 # OpenAi 区块
-        awk '/^# OpenAi/{flag=1;next}/^#/{flag=0} !flag' Rules/ProxyMedia.list > tmp && mv tmp Rules/ProxyMedia.list
+        awk '/^# OpenAi/{flag=1;next}/^#/{flag=0} !flag' Rules/Shadowrocket/ProxyMedia.list > tmp && mv tmp Rules/Shadowrocket/ProxyMedia.list
         # 复制到 Clash Meta 路径
-        cp Rules/ProxyMedia.list Rules/Clash\ Meta/ProxyMedia.list
+        cp Rules/Shadowrocket/ProxyMedia.list Rules/Clash\ Meta/ProxyMedia.list
         # 仅对 Clash Meta 版本做替换
         sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/ProxyMedia.list
-        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/ProxyMedia.list
+        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/ProxyMedia.list
 
 
     - name: Fetch Download.list
       run: |
-        curl -o Rules/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-        cp Rules/Download.list Rules/Clash\ Meta/Download.list
+        curl -o Rules/Shadowrocket/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
+        cp Rules/Shadowrocket/Download.list Rules/Clash\ Meta/Download.list
         sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Download.list
-        sed -i 's/URL-REGEX/DOMAIN-REGEX/g' Rules/Clash\ Meta/Download.list
+        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/Download.list
 
     - name: Check for changes
       id: check_changes
@@ -134,7 +169,7 @@ jobs:
         # Get the current Beijing time
         current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
         # Update the index.html file
-        sed -i "s|<p>Last Update:.*</p>|<p>Last Update: $current_time</p>|" index.html
+        sed -i "s|\(<p[^>]*>Last Update:\)[^<]*\(</p>\)|\1 $current_time\2|" index.html
 
     - name: Commit and push changes
       if: env.changes_detected == 'true'

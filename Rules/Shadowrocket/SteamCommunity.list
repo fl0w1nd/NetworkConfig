@@ -1,0 +1,11 @@
+# 内容：Steam社区与商店
+# 数量：8条
+DOMAIN-SUFFIX,steamcommunity.com
+DOMAIN,steambroadcast.akamaized.net
+DOMAIN,steamcommunity-a.akamaihd.net
+DOMAIN,steamstore-a.akamaihd.net
+DOMAIN,steamusercontent-a.akamaihd.net
+DOMAIN,steamuserimages-a.akamaihd.net
+DOMAIN,steampipe.akamaized.net
+DOMAIN,store.steampowered.com
+DOMAIN-SUFFIX,fastly.steamstatic.com
