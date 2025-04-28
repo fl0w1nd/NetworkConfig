@@ -10,6 +10,34 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .dark-mode-transition {
+      transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+    }
+    .btn-click {
+      transform: scale(0.95);
+      transition: transform 0.1s;
+    }
+    .copy-animation {
+      background-color: #34d399 !important;
+    }
+    .notification-animation {
+      animation: slide-up 0.3s ease-out;
+    }
+    .body-noscroll {
+      overflow: hidden;
+    }
+    @keyframes slide-up {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -155,7 +183,7 @@
           <i class="fas fa-times"></i>
         </button>
       </div>
-      <div class="p-4 overflow-auto flex-grow">
+      <div class="p-4 overflow-auto flex-grow" id="preview-scroll-container">
         <pre id="preview-content" class="whitespace-pre-wrap text-sm text-gray-800 dark:text-gray-200 font-mono"></pre>
       </div>
     </div>
@@ -287,6 +315,9 @@
       title.textContent = `${name} 规则预览`;
       content.textContent = '加载中...';
       modal.classList.remove('hidden');
+      
+      // 禁用背景滚动
+      document.body.classList.add('body-noscroll');
       
       try {
         const response = await fetch(path);
@@ -426,14 +457,41 @@
       // 关闭预览模态窗口
       document.getElementById('close-preview').addEventListener('click', () => {
         document.getElementById('preview-modal').classList.add('hidden');
+        // 恢复背景滚动
+        document.body.classList.remove('body-noscroll');
       });
       
       // 点击模态窗口背景关闭
       document.getElementById('preview-modal').addEventListener('click', (e) => {
         if (e.target === document.getElementById('preview-modal')) {
           document.getElementById('preview-modal').classList.add('hidden');
+          // 恢复背景滚动
+          document.body.classList.remove('body-noscroll');
         }
       });
+      
+      // 阻止预览内容区域的滚动事件冒泡到父元素
+      const previewContent = document.getElementById('preview-scroll-container');
+      
+      // 阻止滚轮事件冒泡
+      previewContent.addEventListener('wheel', (e) => {
+        e.stopPropagation();
+        
+        // 检查是否到达滚动边界
+        const { scrollTop, scrollHeight, clientHeight } = previewContent;
+        const isScrolledToTop = scrollTop === 0;
+        const isScrolledToBottom = scrollTop + clientHeight >= scrollHeight - 1;
+        
+        // 如果向上滚动且已经在顶部，或向下滚动且已经在底部，则阻止默认行为
+        if ((e.deltaY < 0 && isScrolledToTop) || (e.deltaY > 0 && isScrolledToBottom)) {
+          e.preventDefault();
+        }
+      }, { passive: false });
+      
+      // 阻止触摸滚动事件冒泡
+      previewContent.addEventListener('touchmove', (e) => {
+        e.stopPropagation();
+      }, { passive: false });
       
       // 绑定预览按钮点击事件 (使用事件委托)
       document.addEventListener('click', (e) => {
