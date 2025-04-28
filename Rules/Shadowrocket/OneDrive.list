@@ -1,8 +1,8 @@
 # OneDrive
 PROCESS-NAME,OneDrive
 PROCESS-NAME,OneDriveUpdater
-IN-USER,OneDrive*
-IN-USER,OneDriveiOSApp*
+USER-AGENT,OneDrive*
+USER-AGENT,OneDriveiOSApp*
 DOMAIN-KEYWORD,1drv
 DOMAIN-KEYWORD,onedrive
 DOMAIN-KEYWORD,skydrive
