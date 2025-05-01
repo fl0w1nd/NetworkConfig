@@ -1,0 +1,276 @@
+dns:
+  default-nameserver:
+    - 223.5.5.5
+    - 114.114.114.114
+  nameserver:
+    - https://doh.pub/dns-query
+ 
+  skip-cert-verify: true
+ 
+  nameserver-policy:
+    'www.baidu.com': 114.114.114.114
+    '+.internal.crop.com': system
+ 
+  fake-ip-filter:
+    - '+.stun.*.*'
+    - '+.stun.*.*.*'
+    - '+.stun.*.*.*.*'
+    - '+.stun.*.*.*.*.*'
+ 
+    - 'lens.l.google.com'
+ 
+    - '*.n.n.srv.nintendo.net'
+ 
+    - '+.stun.playstation.net'
+
+    - 'xbox.*.*.microsoft.com'
+    - '*.*.xboxlive.com'
+ 
+    - '*.msftncsi.com'
+    - '*.msftconnecttest.com'
+
+proxy-providers:
+  🛫 机场:
+    type: http
+    url: 此处填入你的订阅链接
+    interval: 3600
+
+
+
+
+proxy-groups:
+- {name: 手动切换, type: select, use: [🛫 机场], icon: https://ruleset.zcsouls.com/IconSet/Auto.png}
+- {name: 节点选择, type: select, proxies: [香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Rocket.png}
+- {name: Twitter, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/X.png}
+- {name: STM登录, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Steam.png}
+- {name: STM社区, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Steam.png}
+- {name: AI服务, type: select, proxies: [日本节点, 香港节点, 台湾节点, 狮城节点, 美国节点, 韩国节点, 俄国节点, 节点选择, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/ChatGPT.png}
+- {name: 微软服务, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Microsoft.png}
+- {name: 苹果服务, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Apple_2.png}
+- {name: E站, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/icon/E-hentai.png}
+- {name: 电报消息, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Telegram.png}
+- {name: 奈飞视频, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Netflix.png}
+- {name: 国外媒体, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Media.png}
+- {name: 谷歌服务, type: select, proxies: [节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Google_Search.png}
+- {name: 游戏平台, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Game.png}
+- {name: 漏网之鱼, type: select, proxies: [DIRECT, 节点选择, 香港节点, 台湾节点, 狮城节点, 日本节点, 美国节点, 韩国节点, 俄国节点, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Blackhole.png}
+- {name: 全球直连, type: select, proxies: [DIRECT, 节点选择, 手动切换], icon: https://ruleset.zcsouls.com/IconSet/Direct.png}
+- {name: 香港节点, type: url-test, use: [🛫 机场],  filter: "港|HK|Hong Kong", icon: https://ruleset.zcsouls.com/IconSet/Hong_Kong.png}
+- {name: 日本节点, type: url-test, use: [🛫 机场],  filter: "日本|川日|日|东京|大阪|泉日|埼玉|沪日|深日|[^-]日|JP|Japan", icon: https://ruleset.zcsouls.com/IconSet/Japan.png}
+- {name: 美国节点, type: url-test, use: [🛫 机场],  filter: "美|波特兰|达拉斯|佛罗里达|加利福利亚|得克萨斯|纽约|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|华盛顿|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States", icon: https://ruleset.zcsouls.com/IconSet/US.png}
+- {name: 台湾节点, type: url-test, use: [🛫 机场],  filter: "台|新北|彰化|TW|Taiwan", icon: https://ruleset.zcsouls.com/IconSet/Taiwan.png}
+- {name: 狮城节点, type: url-test, use: [🛫 机场],  filter: "新加坡|坡|狮城|SG|Singapore", icon: https://ruleset.zcsouls.com/IconSet/Singapore.png}
+- {name: 韩国节点, type: url-test, use: [🛫 机场],  filter: "KR|Korea|KOR|首尔|韩|韓", icon: https://ruleset.zcsouls.com/IconSet/Korea.png}
+- {name: 俄国节点, type: url-test, use: [🛫 机场],  filter: "俄|莫斯科|RU|ru|圣彼得堡|西伯利亚", icon: https://ruleset.zcsouls.com/IconSet/Russia.png}
+
+rule-providers:
+  OpenAi:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/OpenAi.list"
+    interval: 86400
+
+  E-hentai:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/E-hentai.list"
+    interval: 86400
+
+  GoogleFCM:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/GoogleFCM.list"
+    interval: 86400
+
+  Google:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Google.list"
+    interval: 86400
+
+  SteamCommunity:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/SteamCommunity.list"
+    interval: 86400
+
+  Bing:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Bing.list"
+    interval: 86400
+
+  OneDrive:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/OneDrive.list"
+    interval: 86400
+
+  Twitter:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Twitter.list"
+    interval: 86400
+
+  Microsoft:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Microsoft.list"
+    interval: 86400
+
+  MicrosoftCDN:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/MicrosoftCDN.list"
+    interval: 86400
+
+  Apple:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Apple.list"
+    interval: 86400
+    
+  AppleCDN:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/AppleCDN.list"
+    interval: 86400
+    
+  Telegram:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Telegram.list"
+    interval: 86400
+
+  Netflix:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Netflix.list"
+    interval: 86400
+
+  ProxyMedia:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ProxyMedia.list"
+    interval: 86400
+
+  Global:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Global.list"
+    interval: 86400
+
+  SteamCN:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/SteamCN.list"
+    interval: 86400
+
+  Epic:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Epic.list"
+    interval: 86400
+
+  Origin:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Origin.list"
+    interval: 86400
+
+  Nintendo:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Nintendo.list"
+    interval: 86400
+
+  Sony:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Sony.list"
+    interval: 86400
+
+  ProxyGFWlist:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ProxyGFWlist.list"
+    interval: 86400
+
+  GoogleCN:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/GoogleCN.list"
+    interval: 86400
+
+  ChinaDomain:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ChinaDomain.list"
+    interval: 86400
+
+  ChinaCompanyIp:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/ChinaCompanyIp.list"
+    interval: 86400
+
+  Download:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Download.list"
+    interval: 86400
+
+  LocalAreaNetwork:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/LocalAreaNetwork.list"
+    interval: 86400
+
+  BT:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/BT.list"
+    interval: 86400
+
+  PrivateTracker:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/PrivateTracker.list"
+    interval: 86400
+
+rules:
+  - RULE-SET,OpenAi,AI服务
+  - RULE-SET,Twitter,Twitter
+  - RULE-SET,E-hentai,E站
+  - RULE-SET,GoogleCN,全球直连
+  - RULE-SET,GoogleFCM,谷歌服务
+  - RULE-SET,SteamCommunity,STM社区
+  - RULE-SET,Bing,微软服务
+  - RULE-SET,OneDrive,微软服务
+  - RULE-SET,Microsoft,微软服务
+  - RULE-SET,MicrosoftCDN,微软服务  
+  - RULE-SET,Apple,苹果服务
+  - RULE-SET,AppleCDN,苹果服务
+  - RULE-SET,Telegram,电报消息
+  - RULE-SET,Netflix,奈飞视频
+  - RULE-SET,ProxyMedia,国外媒体
+  - RULE-SET,Google,谷歌服务
+  - RULE-SET,SteamCN,STM登录
+  - RULE-SET,Sony,游戏平台
+  - RULE-SET,Epic,游戏平台
+  - RULE-SET,Origin,游戏平台
+  - RULE-SET,Nintendo,游戏平台
+  - RULE-SET,ProxyGFWlist,节点选择
+  - RULE-SET,Global,节点选择
+  - GEOSITE,geolocation-!cn,节点选择
+  - RULE-SET,ChinaDomain,全球直连
+  - GEOSITE,CN,全球直连
+  - RULE-SET,ChinaCompanyIp,全球直连
+  - RULE-SET,Download,全球直连
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - RULE-SET,BT,全球直连
+  - RULE-SET,PrivateTracker,全球直连
+  - GEOIP,CN,全球直连
+  - DST-PORT,80,漏网之鱼
+  - DST-PORT,443,漏网之鱼
+  - MATCH,DIRECT
