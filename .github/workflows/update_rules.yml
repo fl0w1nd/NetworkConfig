@@ -169,7 +169,7 @@ jobs:
         # Get the current Beijing time
         current_time=$(TZ='Asia/Shanghai' date '+%Y-%m-%d %H:%M')
         # Update the index.html file
-        sed -i "s|\(<p[^>]*>Last Update:\)[^<]*\(</p>\)|\1 $current_time\2|" index.html
+        sed -i "s|\(<i class=\"far fa-clock mr-1\"></i> 最后更新:\)[^<]*|\1 $current_time|" index.html
 
     - name: Commit and push changes
       if: env.changes_detected == 'true'
