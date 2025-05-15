@@ -113,6 +113,16 @@ jobs:
         curl -o Rules/Clash\ Meta/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
         cp Rules/Clash\ Meta/LocalAreaNetwork.list Rules/Shadowrocket/LocalAreaNetwork.list
 
+    - name: Fetch and Process GoogleCN.list
+      run: |
+        # 下载原始dnsmasq格式的文件
+        curl -o google.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/refs/heads/master/google.china.conf
+        
+        # 转换格式: server=/265.com/114.114.114.114 -> DOMAIN-SUFFIX,265.com
+        sed -n 's/^server=\/\(.*\)\/114.114.114.114$/DOMAIN-SUFFIX,\1/p' google.china.conf > Rules/Clash\ Meta/GoogleCN.list
+        
+        cp Rules/Clash\ Meta/GoogleCN.list Rules/Shadowrocket/GoogleCN.list
+
     - name: Fetch and Process OneDrive.list
       run: |
         curl -o Rules/Shadowrocket/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
