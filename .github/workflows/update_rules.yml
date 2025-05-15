@@ -98,11 +98,6 @@ jobs:
         curl -o Rules/Clash\ Meta/Global.list https://ruleset.skk.moe/Clash/non_ip/global.txt
         cp Rules/Clash\ Meta/Global.list Rules/Shadowrocket/Global.list
 
-    - name: Fetch GoogleCN.list
-      run: |
-        curl -o Rules/Clash\ Meta/GoogleCN.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
-        cp Rules/Clash\ Meta/GoogleCN.list Rules/Shadowrocket/GoogleCN.list
-
     - name: Fetch ChinaDomain.list
       run: |
         curl -o Rules/Clash\ Meta/ChinaDomain.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
