@@ -33,6 +33,11 @@
     body {
       font-family: 'Noto Sans SC', sans-serif;
       scroll-behavior: smooth;
+      background-image: linear-gradient(to right bottom, rgba(249, 250, 251, 0.01) 0%, rgba(249, 250, 251, 0.1) 100%);
+    }
+    
+    .dark body {
+      background-image: linear-gradient(to right bottom, rgba(17, 24, 39, 0.01) 0%, rgba(17, 24, 39, 0.1) 100%);
     }
 
     .dark-mode-transition {
@@ -41,55 +46,86 @@
 
     .card-hover {
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
     }
 
     .card-hover:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dark .card-hover {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
 
     .dark .card-hover:hover {
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .btn-primary {
-      background-color: var(--primary-color);
+      background-color: rgba(59, 130, 246, 0.8);
       color: white;
       transition: all 0.2s ease;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
     }
 
     .btn-primary:hover {
-      background-color: var(--primary-hover);
+      background-color: rgba(37, 99, 235, 0.85);
       transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
     }
 
     .btn-primary:active {
       transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     .btn-secondary {
-      background-color: transparent;
-      border: 1px solid #e5e7eb;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: var(--text-light-secondary);
       transition: all 0.2s ease;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      padding: 0.35rem 0.75rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .dark .btn-secondary {
-      border-color: #374151;
+      background-color: rgba(30, 41, 59, 0.5);
+      border-color: rgba(255, 255, 255, 0.05);
       color: var(--text-dark-secondary);
     }
 
     .btn-secondary:hover {
-      background-color: rgba(243, 244, 246, 0.5);
+      background-color: rgba(243, 244, 246, 0.2);
       transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .dark .btn-secondary:hover {
-      background-color: rgba(55, 65, 81, 0.5);
+      background-color: rgba(55, 65, 81, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .btn-secondary:active {
       transform: translateY(1px);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
     .btn-icon {
@@ -99,14 +135,27 @@
       border-radius: 9999px;
       padding: 0.5rem;
       transition: all 0.2s ease;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .btn-icon:hover {
-      background-color: rgba(243, 244, 246, 0.5);
+      background-color: rgba(243, 244, 246, 0.2);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dark .btn-icon {
+      background-color: rgba(30, 41, 59, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .dark .btn-icon:hover {
-      background-color: rgba(55, 65, 81, 0.5);
+      background-color: rgba(55, 65, 81, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .copy-animation {
@@ -245,15 +294,20 @@
     .tag {
       display: inline-block;
       padding: 0.25rem 0.5rem;
-      border-radius: 9999px;
+      border-radius: 8px;
       font-size: 0.75rem;
       font-weight: 500;
       background-color: rgba(59, 130, 246, 0.1);
       color: var(--primary-color);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(59, 130, 246, 0.1);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
     }
 
     .dark .tag {
-      background-color: rgba(59, 130, 246, 0.2);
+      background-color: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     }
 
     /* 模态窗口动画 */
@@ -343,7 +397,7 @@
 
 <body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 dark-mode-transition">
   <div class="min-h-screen flex flex-col">
-    <header class="relative bg-white dark:bg-gray-800 shadow-sm dark-mode-transition overflow-hidden">
+    <header class="relative shadow-sm dark-mode-transition overflow-hidden backdrop-blur-md bg-white/70 dark:bg-gray-800/70">
       <div class="wave"></div>
       <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="flex justify-between items-center">
@@ -362,7 +416,7 @@
               <span class="tag ml-3">v2.0</span>
             </div>
           </div>
-          <button id="theme-toggle" class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-colors">
+          <button id="theme-toggle" class="btn-icon">
             <i id="theme-toggle-dark-icon" class="fas fa-moon hidden text-lg"></i>
             <i id="theme-toggle-light-icon" class="fas fa-sun hidden text-lg"></i>
           </button>
@@ -373,18 +427,18 @@
     <main class="flex-grow max-w-7xl w-full mx-auto py-8 px-4 sm:px-6 lg:px-8">
       <!-- 客户端选择器 -->
       <div class="mb-8">
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-xl divide-y divide-gray-200 dark:divide-gray-700 dark-mode-transition">
-          <div class="px-6 py-5">
+        <div class="bg-white/90 dark:bg-gray-800/90 overflow-hidden shadow-sm rounded-xl border border-gray-100/50 dark:border-gray-700/50 dark-mode-transition">
+          <div class="px-6 py-5 border-b border-gray-200/50 dark:border-gray-700/50">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white dark-mode-transition flex items-center">
               <i class="fas fa-mobile-alt mr-3 text-primary-500"></i>选择代理客户端类型
             </h2>
           </div>
           <div class="px-6 py-5">
             <div class="flex flex-wrap gap-4">
-              <button id="clash-stash-btn" class="client-btn inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary-500 hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all active">
+              <button id="clash-stash-btn" class="client-btn inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-lg text-white transition-all active bg-primary-500 border border-white/10 shadow-sm hover:shadow-md hover:bg-primary-600">
                 <i class="fas fa-globe mr-2"></i> Clash Meta / Stash
               </button>
-              <button id="shadowrocket-btn" class="client-btn inline-flex items-center px-5 py-2.5 border border-gray-300 dark:border-gray-600 text-sm font-medium rounded-lg shadow-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 dark:focus:ring-primary-400 transition-all dark-mode-transition">
+              <button id="shadowrocket-btn" class="client-btn inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-lg shadow-sm transition-all dark-mode-transition bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200/80 dark:border-gray-700/80 hover:bg-gray-50 dark:hover:bg-gray-700 hover:shadow-md">
                 <i class="fas fa-rocket mr-2"></i> Shadowrocket
               </button>
             </div>
@@ -394,17 +448,17 @@
 
       <!-- 配置文件 -->
       <div id="config-section" class="mb-8">
-        <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-xl dark-mode-transition">
-          <div class="px-6 py-5 border-b border-gray-200 dark:border-gray-700">
+        <div class="backdrop-blur-md bg-white/70 dark:bg-gray-800/70 overflow-hidden shadow-sm rounded-xl border border-gray-100/50 dark:border-gray-700/50 dark-mode-transition">
+          <div class="px-6 py-5 border-b border-gray-200/50 dark:border-gray-700/50">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white dark-mode-transition flex items-center">
               <i class="fas fa-file-code mr-3 text-primary-500"></i>配置模板
             </h2>
           </div>
           <div class="px-6 py-5">
             <div id="clash-meta-config" class="config-item">
-              <div class="flex items-center justify-between p-5 mb-4 bg-gray-50 dark:bg-gray-700 rounded-xl card-hover dark-mode-transition">
+              <div class="flex items-center justify-between p-5 mb-4 backdrop-blur-md bg-gray-50/70 dark:bg-gray-700/70 rounded-xl card-hover dark-mode-transition">
                 <div class="flex items-center">
-                  <div class="w-12 h-12 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-4">
+                  <div class="w-12 h-12 rounded-full bg-primary-100/90 dark:bg-primary-900/90 flex items-center justify-center mr-4 shadow-sm">
                     <img src="icon/ClashMeta.png" alt="Clash Meta" class="w-8 h-8" onerror="this.src='icon/default.png'; this.onerror=null;">
                   </div>
                   <div>
@@ -413,11 +467,11 @@
                   </div>
                 </div>
                 <div class="flex gap-3">
-                  <button class="preview-btn btn-secondary rounded-lg px-3 py-2 flex items-center text-sm" data-path="Conf/ClashMeta.yaml" data-name="ClashMeta.yaml">
+                  <button class="preview-btn btn-secondary flex items-center" data-path="Conf/ClashMeta.yaml" data-name="ClashMeta.yaml">
                     <i class="fas fa-eye mr-2"></i> 预览
                   </button>
-                  <button onclick="copyToClipboard('Conf/ClashMeta.yaml')" class="btn-primary rounded-lg px-3 py-2 flex items-center text-sm">
-                    <i class="fas fa-copy mr-2"></i> 复制链接
+                  <button onclick="copyToClipboard('Conf/ClashMeta.yaml')" class="btn-primary flex items-center">
+                    <i class="fas fa-copy mr-2"></i> 复制
                   </button>
                 </div>
               </div>
@@ -467,14 +521,14 @@
       </div>
 
       <!-- 规则列表 -->
-      <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm rounded-xl dark-mode-transition">
-        <div class="px-6 py-5 border-b border-gray-200 dark:border-gray-700">
+      <div class="backdrop-blur-md bg-white/70 dark:bg-gray-800/70 overflow-hidden shadow-sm rounded-xl border border-gray-100/50 dark:border-gray-700/50 dark-mode-transition">
+        <div class="px-6 py-5 border-b border-gray-200/50 dark:border-gray-700/50">
           <div class="flex justify-between items-center">
             <h2 class="text-xl font-semibold text-gray-900 dark:text-white dark-mode-transition flex items-center">
               <i class="fas fa-list-alt mr-3 text-primary-500"></i>规则列表
             </h2>
             <div class="relative">
-              <input type="text" id="rule-search" placeholder="搜索规则..." class="pl-10 pr-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 dark:focus:ring-primary-400 dark-mode-transition">
+              <input type="text" id="rule-search" placeholder="搜索规则..." class="pl-10 pr-4 py-2 rounded-lg backdrop-filter blur-sm bg-white/30 dark:bg-gray-800/30 border border-white/20 dark:border-white/5 text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500/50 dark:focus:ring-primary-400/50 dark-mode-transition shadow-sm">
               <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
             </div>
           </div>
@@ -498,7 +552,7 @@
       </div>
     </main>
 
-    <footer class="bg-white dark:bg-gray-800 mt-auto dark-mode-transition">
+    <footer class="backdrop-blur-md bg-white/70 dark:bg-gray-800/70 mt-auto border-t border-gray-100/50 dark:border-gray-700/50 dark-mode-transition">
       <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="text-center md:text-left mb-4 md:mb-0">
@@ -507,10 +561,10 @@
             </p>
           </div>
           <div class="flex space-x-4">
-            <a href="https://github.com/fl0w1nd" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+            <a href="https://github.com/fl0w1nd" class="btn-icon text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 p-2">
               <i class="fab fa-github text-xl"></i>
             </a>
-            <a href="mailto:fl0w1nd@zcsouls.com" class="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
+            <a href="mailto:fl0w1nd@zcsouls.com" class="btn-icon text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 p-2">
               <i class="fas fa-envelope text-xl"></i>
             </a>
           </div>
@@ -520,14 +574,14 @@
   </div>
 
   <!-- 成功通知 -->
-  <div id="copy-notification" class="fixed bottom-4 right-4 bg-green-500 text-white px-4 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 flex items-center">
+  <div id="copy-notification" class="fixed bottom-4 right-4 backdrop-blur-md bg-green-500/90 text-white px-4 py-3 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 flex items-center border border-white/20">
     <i class="fas fa-check-circle mr-2"></i> 已复制到剪贴板
   </div>
 
   <!-- 预览模态窗口 -->
-  <div id="preview-modal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-50 hidden backdrop-blur-sm">
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 max-h-[80vh] flex flex-col dark-mode-transition modal-enter">
-      <div class="px-6 py-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
+  <div id="preview-modal" class="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-30 hidden backdrop-blur-sm">
+    <div class="backdrop-blur-md bg-white/90 dark:bg-gray-800/90 rounded-xl shadow-2xl w-11/12 md:w-3/4 lg:w-2/3 max-h-[80vh] flex flex-col dark-mode-transition modal-enter border border-white/20 dark:border-gray-700/30">
+      <div class="px-6 py-4 border-b border-gray-200/50 dark:border-gray-700/50 flex justify-between items-center">
         <h3 id="preview-title" class="text-lg font-medium text-gray-900 dark:text-white dark-mode-transition flex items-center">
           <i class="fas fa-file-alt mr-2 text-primary-500"></i> 规则预览
         </h3>
@@ -536,13 +590,13 @@
         </button>
       </div>
       <div class="p-6 overflow-auto flex-grow" id="preview-scroll-container">
-        <pre id="preview-content" class="whitespace-pre-wrap text-sm text-gray-800 dark:text-gray-200 font-mono bg-gray-50 dark:bg-gray-700 p-4 rounded-lg"></pre>
+        <pre id="preview-content" class="whitespace-pre-wrap text-sm text-gray-800 dark:text-gray-200 font-mono backdrop-blur-md bg-gray-50/70 dark:bg-gray-700/70 p-4 rounded-lg border border-gray-100/50 dark:border-gray-600/50"></pre>
       </div>
-      <div class="px-6 py-4 border-t border-gray-200 dark:border-gray-700 flex justify-end">
-        <button id="copy-preview" class="btn-primary rounded-lg px-4 py-2 flex items-center text-sm mr-3">
+      <div class="px-6 py-4 border-t border-gray-200/50 dark:border-gray-700/50 flex justify-end">
+        <button id="copy-preview" class="btn-primary flex items-center mr-3">
           <i class="fas fa-copy mr-2"></i> 复制内容
         </button>
-        <button id="close-preview-btn" class="btn-secondary rounded-lg px-4 py-2 flex items-center text-sm">
+        <button id="close-preview-btn" class="btn-secondary flex items-center">
           <i class="fas fa-times mr-2"></i> 关闭
         </button>
       </div>
@@ -695,7 +749,7 @@
     // 创建单个规则卡片
     function createRuleCard(rule, clientType) {
       const card = document.createElement('div');
-      card.className = 'bg-white dark:bg-gray-800 overflow-hidden rounded-xl shadow-sm hover:shadow-md transition card-hover dark-mode-transition border border-gray-100 dark:border-gray-700';
+      card.className = 'overflow-hidden rounded-xl transition card-hover dark-mode-transition';
       
       const ruleUrl = window.location.origin + '/' + rule.path;
       const iconPath = `icon/${rule.name}.png`;
@@ -703,18 +757,18 @@
       card.innerHTML = `
         <div class="p-5">
           <div class="flex items-center mb-3">
-            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3">
+            <div class="w-10 h-10 rounded-full bg-primary-100 dark:bg-primary-900 flex items-center justify-center mr-3 shadow-sm">
               <img src="${iconPath}" alt="${rule.name}" class="w-6 h-6" onerror="this.src='icon/default.png'; this.onerror=null;">
             </div>
             <h3 class="text-md font-semibold truncate dark-mode-transition">${rule.name}</h3>
           </div>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 h-10 line-clamp-2">${rule.description}</p>
-          <div class="flex justify-between items-center">
-            <button class="preview-btn btn-secondary rounded-lg px-3 py-1.5 text-xs flex items-center" data-path="${rule.path}" data-name="${rule.name}">
+          <div class="flex justify-between items-center gap-2">
+            <button class="preview-btn btn-secondary flex-1 flex items-center justify-center" data-path="${rule.path}" data-name="${rule.name}">
               <i class="fas fa-eye mr-1.5"></i> 预览
             </button>
-            <button onclick="copyToClipboard('${rule.path}')" class="btn-primary rounded-lg px-3 py-1.5 text-xs flex items-center">
-              <i class="fas fa-copy mr-1.5"></i> 复制链接
+            <button onclick="copyToClipboard('${rule.path}')" class="btn-primary flex-1 flex items-center justify-center">
+              <i class="fas fa-copy mr-1.5"></i> 复制
             </button>
           </div>
         </div>
