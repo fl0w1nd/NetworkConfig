@@ -193,7 +193,11 @@ jobs:
     - name: Merge ProxyMedia.list
       run: |
         # 将 Netflix、YouTube、YouTubeMusic、Twitch、Disney、TikTok、Spotify 合并到 ProxyMedia.list
-        cat Rules/Clash\ Meta/Netflix.list Rules/Clash\ Meta/YouTube.list Rules/Clash\ Meta/YouTubeMusic.list Rules/Clash\ Meta/Twitch.list Rules/Clash\ Meta/Disney.list Rules/Clash\ Meta/TikTok.list Rules/Clash\ Meta/Spotify.list > Rules/Clash\ Meta/ProxyMedia.list
+        echo "" > Rules/Clash\ Meta/ProxyMedia.list
+        for file in "Netflix" "YouTube" "YouTubeMusic" "Twitch" "Disney" "TikTok" "Spotify"; do
+          echo "" >> Rules/Clash\ Meta/ProxyMedia.list
+          cat Rules/Clash\ Meta/$file.list >> Rules/Clash\ Meta/ProxyMedia.list
+        done
         # 拷贝到 Shadowrocket 路径
         cp Rules/Clash\ Meta/ProxyMedia.list Rules/Shadowrocket/ProxyMedia.list
 
