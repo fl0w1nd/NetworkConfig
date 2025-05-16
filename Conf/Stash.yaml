@@ -190,6 +190,24 @@ rule-providers:
     url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Sony.list"
     interval: 86400
 
+  Ubisoft:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Ubisoft.list"
+    interval: 86400
+
+  Rockstar:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Rockstar.list"
+    interval: 86400
+
+  Xbox:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Xbox.list"
+    interval: 86400
+
   ProxyGFWlist:
     behavior: classical
     format: text
@@ -238,6 +256,12 @@ rule-providers:
     url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/PrivateTracker.list"
     interval: 86400
 
+  Stun:
+    behavior: classical
+    format: text
+    url: "https://ruleset.zcsouls.com/Rules/Clash%20Meta/Stun.list"
+    interval: 86400
+
 rules:
   - RULE-SET,OpenAi,AI服务
   - RULE-SET,Twitter,Twitter
@@ -260,6 +284,9 @@ rules:
   - RULE-SET,Epic,游戏平台
   - RULE-SET,Origin,游戏平台
   - RULE-SET,Nintendo,游戏平台
+  - RULE-SET,Ubisoft,游戏平台
+  - RULE-SET,Rockstar,游戏平台
+  - RULE-SET,Xbox,游戏平台
   - RULE-SET,ProxyGFWlist,节点选择
   - RULE-SET,Global,节点选择
   - GEOSITE,geolocation-!cn,节点选择
@@ -267,6 +294,7 @@ rules:
   - GEOSITE,CN,全球直连
   - RULE-SET,ChinaCompanyIp,全球直连
   - RULE-SET,Download,全球直连
+  - RULE-SET,Stun,全球直连
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,BT,全球直连
   - RULE-SET,PrivateTracker,全球直连

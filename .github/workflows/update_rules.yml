@@ -20,8 +20,45 @@ jobs:
 
     - name: Fetch OpenAi.list
       run: |
-        curl -o Rules/Clash\ Meta/OpenAi.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
+        curl -o Rules/Clash\ Meta/OpenAi.list https://raw.githubusercontent.com/LM-Firefly/Rules/refs/heads/master/PROXY/OpenAI.list
         cp Rules/Clash\ Meta/OpenAi.list Rules/Shadowrocket/OpenAi.list
+
+    - name: Fetch YouTube.list
+      run: |
+        curl -o Rules/Clash\ Meta/YouTube.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list
+        cp Rules/Clash\ Meta/YouTube.list Rules/Shadowrocket/YouTube.list
+
+    - name: Fetch YouTubeMusic.list
+      run: |
+        curl -o Rules/Clash\ Meta/YouTubeMusic.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTubeMusic/YouTubeMusic.list
+        cp Rules/Clash\ Meta/YouTubeMusic.list Rules/Shadowrocket/YouTubeMusic.list
+
+    - name: Fetch Twitch.list
+      run: |
+        curl -o Rules/Clash\ Meta/Twitch.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Twitch/Twitch.list
+        cp Rules/Clash\ Meta/Twitch.list Rules/Shadowrocket/Twitch.list
+
+    - name: Fetch Disney.list
+      run: |
+        curl -o Rules/Clash\ Meta/Disney.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Disney/Disney.list
+        cp Rules/Clash\ Meta/Disney.list Rules/Shadowrocket/Disney.list
+
+    - name: Fetch TikTok.list
+      run: |
+        curl -o Rules/Clash\ Meta/TikTok.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list
+        cp Rules/Clash\ Meta/TikTok.list Rules/Shadowrocket/TikTok.list
+
+    - name: Fetch Netflix.list
+      run: |
+        curl -o Rules/Shadowrocket/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
+        cp Rules/Shadowrocket/Netflix.list Rules/Clash\ Meta/Netflix.list
+        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Netflix.list
+        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/Netflix.list     
+
+    - name: Fetch Spotify.list
+      run: |
+        curl -o Rules/Clash\ Meta/Spotify.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Spotify/Spotify.list
+        cp Rules/Clash\ Meta/Spotify.list Rules/Shadowrocket/Spotify.list
 
     - name: Fetch Twitter.list
       run: |
@@ -50,7 +87,7 @@ jobs:
 
     - name: Fetch Microsoft.list
       run: |
-        curl -o Rules/Clash\ Meta/Microsoft.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
+        curl -o Rules/Clash\ Meta/Microsoft.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Microsoft/Microsoft.list
         cp Rules/Clash\ Meta/Microsoft.list Rules/Shadowrocket/Microsoft.list
 
     - name: Fetch MicrosoftCDN.conf
@@ -75,7 +112,7 @@ jobs:
 
     - name: Fetch Origin.list
       run: |
-        curl -o Rules/Clash\ Meta/Origin.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Origin.list
+        curl -o Rules/Clash\ Meta/Origin.list https://raw.githubusercontent.com/LM-Firefly/Rules/refs/heads/master/Game/EA.list
         cp Rules/Clash\ Meta/Origin.list Rules/Shadowrocket/Origin.list
 
     - name: Fetch Nintendo.list
@@ -87,6 +124,21 @@ jobs:
       run: |
         curl -o Rules/Clash\ Meta/Sony.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Sony.list
         cp Rules/Clash\ Meta/Sony.list Rules/Shadowrocket/Sony.list
+    
+    - name: Fetch Xbox.list
+      run: |
+        curl -o Rules/Clash\ Meta/Xbox.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Xbox/Xbox.list
+        cp Rules/Clash\ Meta/Xbox.list Rules/Shadowrocket/Xbox.list
+
+    - name: Fetch Ubisoft.list
+      run: |
+        curl -o Rules/Clash\ Meta/Ubisoft.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/UBI/UBI.list
+        cp Rules/Clash\ Meta/Ubisoft.list Rules/Shadowrocket/Ubisoft.list
+
+    - name: Fetch Rockstar.list
+      run: |
+        curl -o Rules/Clash\ Meta/Rockstar.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Rockstar/Rockstar.list
+        cp Rules/Clash\ Meta/Rockstar.list Rules/Shadowrocket/Rockstar.list
 
     - name: Fetch ProxyGFWlist.list
       run: |
@@ -108,6 +160,16 @@ jobs:
         curl -o Rules/Clash\ Meta/ChinaCompanyIp.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
         cp Rules/Clash\ Meta/ChinaCompanyIp.list Rules/Shadowrocket/ChinaCompanyIp.list
 
+    - name: Fetch Download.list
+      run: |
+        curl -o Rules/Shadowrocket/Download.list https://raw.githubusercontent.com/LM-Firefly/Rules/refs/heads/master/Special/Download.list
+        cp Rules/Shadowrocket/Download.list Rules/Clash\ Meta/Download.list
+        
+    - name: Fetch Stun.list
+      run: |
+        curl -o Rules/Clash\ Meta/Stun.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/1711418f79fd2d7978a34911ba41bd477f253e31/rule/Clash/STUN/STUN.list
+        cp Rules/Clash\ Meta/Stun.list Rules/Shadowrocket/Stun.list
+
     - name: Fetch LocalAreaNetwork.list
       run: |
         curl -o Rules/Clash\ Meta/LocalAreaNetwork.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
@@ -123,41 +185,17 @@ jobs:
         
         cp Rules/Clash\ Meta/GoogleCN.list Rules/Shadowrocket/GoogleCN.list
 
-    - name: Fetch and Process OneDrive.list
+    - name: Fetch OneDrive.list
       run: |
-        curl -o Rules/Shadowrocket/OneDrive.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
+        curl -o Rules/Shadowrocket/OneDrive.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/OneDrive/OneDrive.list
         cp Rules/Shadowrocket/OneDrive.list Rules/Clash\ Meta/OneDrive.list
-        # 替换 USER-AGENT 为 IN-USER，并删除以 URL-REGEX 开头的行
-        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/OneDrive.list
-        sed -i '/^URL-REGEX/d' Rules/Clash\ Meta/OneDrive.list
-      
-    - name: Fetch Netflix.list
-      run: |
-        curl -o Rules/Shadowrocket/Netflix.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-        cp Rules/Shadowrocket/Netflix.list Rules/Clash\ Meta/Netflix.list
-        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Netflix.list
-        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/Netflix.list
 
-    - name: Fetch ProxyMedia.list
+    - name: Merge ProxyMedia.list
       run: |
-        curl -o Rules/Shadowrocket/ProxyMedia.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
-        # 删除 # AI 区块
-        awk '/^# AI/{flag=1;next}/^#/{flag=0} !flag' Rules/Shadowrocket/ProxyMedia.list > tmp && mv tmp Rules/Shadowrocket/ProxyMedia.list
-        # 删除 # OpenAi 区块
-        awk '/^# OpenAi/{flag=1;next}/^#/{flag=0} !flag' Rules/Shadowrocket/ProxyMedia.list > tmp && mv tmp Rules/Shadowrocket/ProxyMedia.list
-        # 复制到 Clash Meta 路径
-        cp Rules/Shadowrocket/ProxyMedia.list Rules/Clash\ Meta/ProxyMedia.list
-        # 仅对 Clash Meta 版本做替换
-        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/ProxyMedia.list
-        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/ProxyMedia.list
-
-
-    - name: Fetch Download.list
-      run: |
-        curl -o Rules/Shadowrocket/Download.list https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
-        cp Rules/Shadowrocket/Download.list Rules/Clash\ Meta/Download.list
-        sed -i 's/USER-AGENT/IN-USER/g' Rules/Clash\ Meta/Download.list
-        sed -i '/URL-REGEX/d' Rules/Clash\ Meta/Download.list
+        # 将 Netflix、YouTube、YouTubeMusic、Twitch、Disney、TikTok、Spotify 合并到 ProxyMedia.list
+        cat Rules/Clash\ Meta/Netflix.list Rules/Clash\ Meta/YouTube.list Rules/Clash\ Meta/YouTubeMusic.list Rules/Clash\ Meta/Twitch.list Rules/Clash\ Meta/Disney.list Rules/Clash\ Meta/TikTok.list Rules/Clash\ Meta/Spotify.list > Rules/Clash\ Meta/ProxyMedia.list
+        # 拷贝到 Shadowrocket 路径
+        cp Rules/Clash\ Meta/ProxyMedia.list Rules/Shadowrocket/ProxyMedia.list
 
     - name: Check for changes
       id: check_changes
