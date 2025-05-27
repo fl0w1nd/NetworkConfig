@@ -1,4 +1,9 @@
 {
+  "git": {
+    "deploymentEnabled": {
+      "dev": false
+    }
+  },
   "headers": [
     {
       "source": "/:path*\\.(txt|list)$",
