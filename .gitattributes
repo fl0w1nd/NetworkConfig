@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# 忽略 GitHub workflows 目录的差异对比
+.github/workflows/* -diff
+.github/workflows/* merge=ours
