@@ -46,7 +46,7 @@ IP-CIDR,208.75.76.0/22,no-resolve
 # NAME: YouTube
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:14:51
+# UPDATED: 2025-06-06 09:15:10
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 179
 # IP-CIDR: 2
@@ -239,7 +239,7 @@ IP-CIDR6,2620:120:e000::/40,no-resolve
 # NAME: YouTubeMusic
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:14:51
+# UPDATED: 2025-06-06 09:15:10
 # DOMAIN: 1
 # TOTAL: 1
 DOMAIN,music.youtube.com
@@ -247,7 +247,7 @@ DOMAIN,music.youtube.com
 # NAME: Twitch
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:56
+# UPDATED: 2025-06-06 09:17:48
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 8
 # IP-CIDR: 11
@@ -280,7 +280,7 @@ PROCESS-NAME,tv.twitch.android.app
 # NAME: Disney
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:16:10
+# UPDATED: 2025-06-06 09:16:55
 # DOMAIN-SUFFIX: 171
 # PROCESS-NAME: 2
 # TOTAL: 173
@@ -461,7 +461,7 @@ PROCESS-NAME,com.disney.disneyplus
 # NAME: TikTok
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-08-05 02:10:46
+# UPDATED: 2025-06-06 09:16:55
 # DOMAIN: 3
 # DOMAIN-KEYWORD: 2
 # DOMAIN-SUFFIX: 22
@@ -499,7 +499,7 @@ PROCESS-NAME,com.zhiliaoapp.musically
 # NAME: Spotify
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-11-25 02:12:13
+# UPDATED: 2025-06-06 09:16:55
 # DOMAIN: 6
 # DOMAIN-KEYWORD: 1
 # DOMAIN-SUFFIX: 20
