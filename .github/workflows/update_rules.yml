@@ -164,11 +164,6 @@ jobs:
       run: |
         curl -o Rules/Shadowrocket/Download.list https://raw.githubusercontent.com/LM-Firefly/Rules/refs/heads/master/Special/Download.list
         cp Rules/Shadowrocket/Download.list Rules/Clash\ Meta/Download.list
-        
-    - name: Fetch Stun.list
-      run: |
-        curl -o Rules/Clash\ Meta/Stun.list https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/1711418f79fd2d7978a34911ba41bd477f253e31/rule/Clash/STUN/STUN.list
-        cp Rules/Clash\ Meta/Stun.list Rules/Shadowrocket/Stun.list
 
     - name: Fetch LocalAreaNetwork.list
       run: |
