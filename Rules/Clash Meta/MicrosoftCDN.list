@@ -1,6 +1,6 @@
 #########################################
 # Sukka's Ruleset - Microsoft CDN
-# Last Updated: 2025-05-13T12:57:53.391Z
+# Last Updated: 2025-06-21T07:43:07.963Z
 # Size: 21
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
@@ -33,3 +33,4 @@ DOMAIN-SUFFIX,dl.delivery.mp.microsoft.com
 DOMAIN-SUFFIX,storeedgefd.dsx.mp.microsoft.com
 DOMAIN-SUFFIX,fs.microsoft.com
 ################## EOF ##################
+
