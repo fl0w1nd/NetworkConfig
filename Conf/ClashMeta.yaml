@@ -36,32 +36,28 @@ sniffer:
 dns:
   enable: true
   ipv6: false
-  enhanced-mode: redir-host
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  respect-rules: true
   nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
   fallback:
-    - 8.8.8.8#🚀节点选择
-    - 1.1.1.1#🚀节点选择
+    - https://dns.google/dns-query
+    - https://cloudflare-dns.com/dns-query
   fallback-filter:
     geoip: true
     geoip-code: CN
+    geosite:
+      - gfw
     ipcidr:
       - 240.0.0.0/4
   default-nameserver:
-   - 114.114.114.114
-   - 223.5.5.5
+    - 223.5.5.5
+    - 119.29.29.29
   proxy-server-nameserver:
-   - 114.114.114.114
-   - 223.5.5.5
-  nameserver-policy:
-    "geosite:cn,private":
-      - 114.114.114.114
-      - 223.5.5.5
-      - 119.29.29.29
-    "geosite:geolocation-!cn":
-      - 8.8.8.8#🚀节点选择
-      - 1.1.1.1#🚀节点选择
+    - 223.5.5.5
   
 proxy-groups:
 - {name: 🚀手动切换, type: select, include-all-providers: true}
@@ -308,6 +304,12 @@ rule-providers:
     interval: 86400
 
 rules:
+  - DOMAIN-SUFFIX,dns.google,🚀节点选择
+  - DOMAIN-SUFFIX,cloudflare-dns.com,🚀节点选择
+  - IP-CIDR,8.8.8.8/32,🚀节点选择
+  - IP-CIDR,8.8.4.4/32,🚀节点选择
+  - IP-CIDR,1.1.1.1/32,🚀节点选择
+  - IP-CIDR,1.0.0.1/32,🚀节点选择
   - RULE-SET,OpenAi,💬OpenAi
   - RULE-SET,GoogleCN,🎯全球直连
   - RULE-SET,GoogleFCM,📢谷歌服务
