@@ -36,8 +36,10 @@ sniffer:
 dns:
   enable: true
   ipv6: false
+  prefer-h3: false
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
+  listen: 0.0.0.0:1053
   use-hosts: true
   respect-rules: true
   nameserver:
@@ -49,16 +51,138 @@ dns:
   fallback-filter:
     geoip: true
     geoip-code: CN
-    geosite:
-      - gfw
     ipcidr:
       - 240.0.0.0/4
+      - 61.160.148.90/32
+  nameserver-policy:
+    'geosite:cn':
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
   proxy-server-nameserver:
     - 223.5.5.5
-  
+  fake-ip-filter:
+    # (1) 基础与核心
+    - '*.lan'
+    - '*.local'
+    - '*.internal'
+    - '*.corp'
+    - localhost.direct
+    - 'cable.auth.com'
+    - 'captive.apple.com'
+    - 'connectivitycheck.gstatic.com'
+    - 'clients3.google.com'
+    - 'detectportal.firefox.com'
+    - 'msftconnecttest.com'
+    - 'nmcheck.gnome.org'
+    - 'network-test.debian.org'
+    - 'archlinux.org'
+    - 'connectivitycheck.platform.hicloud.com'
+    - '*.router'
+    - '*.linksys.com'
+    - 'router.asus.com'
+    - 'miwifi.com'
+    - 'tendawifi.com'
+    - 'tplogin.cn'
+    - 'p.to'
+    - 'phicomm.me'
+    # (2) 操作系统与核心服务
+    - '+.apple.com'
+    - '+.icloud.com'
+    - '+.itunes.com'
+    - '+.microsoft.com'
+    - '+.windows.com'
+    - '+.live.com'
+    - '+.office.com'
+    - '+.office365.com'
+    - '+.sharepoint.com'
+    - '+.msn.com'
+    - '+.msftauth.net'
+    - '+.msauth.net'
+    - '+.msocdn.com'
+    # (3) NAT 穿透、实时通信与 P2P
+    - '*stun*'
+    - '*turn*'
+    - 'global.turn.twilio.com'
+    # (4) 游戏平台与服务
+    - '+.steampowered.com'
+    - '+.steamcontent.com'
+    - '+.steamstatic.com'
+    - '+.steamcommunity.com'
+    - '+.playstation.net'
+    - '+.playstation.com'
+    - '+.playstation.jp'
+    - '+.epicgames.com'
+    - '+.ea.com'
+    - '+.origin.com'
+    - '+.ubisoft.com'
+    - 'xbox.*.com'
+    - '+.xboxlive.com'
+    - '+.nintendo.net'
+    - '+.nintendo.com'
+    - '+.nintendo.jp'
+    - '+.battle.net'
+    - '+.riotgames.com'
+    - '+.easyanticheat.net'
+    - '+.battleye.com'
+    # (5) 主流应用与服务
+    - '+.slack.com'
+    - '+.zoom.us'
+    - '+.notion.so'
+    - '+.atlassian.net'
+    - '+.dropbox.com'
+    - '+.github.com'
+    - '+.github.io'
+    - '+.githubassets.com'
+    - '+.gitlab.com'
+    - '+.docker.com'
+    - '+.docker.io'
+    - '+.npmjs.org'
+    - '+.pypi.org'
+    - 'raw.githubusercontent.com'
+    - '+.figma.com'
+    - '+.adobe.com'
+    - '+.tuya.com'
+    - '+.amazonalexa.com'
+    # (6) 中国大陆服务优化
+    - 'music.163.com'
+    - '+.music.126.net'
+    - '+.weibo.com'
+    - '+.weibo.cn'
+    - '+.sina.com.cn'
+    - '+.alipay.com'
+    - '+.taobao.com'
+    - '+.tmall.com'
+    - '+.aliyuncs.com'
+    - '+.aliyun.com'
+    - '+.baidu.com'
+    - '+.bdimg.com'
+    - '+.qq.com'
+    - '+.tencent.com'
+    - '+.jd.com'
+    - '+.douyin.com'
+    - '+.amap.com'
+    # (7) 流媒体与时间同步
+    - '+.netflix.com'
+    - '+.nflxext.com'
+    - '+.hulu.com'
+    - '+.huluim.com'
+    - '+.disneyplus.com'
+    - '+.spotify.com'
+    - 'time.windows.com'
+    - 'time.apple.com'
+    - 'time.asia.apple.com'
+    - 'pool.ntp.org'
+    - 'ntp.aliyun.com'
+    - 'ntp.tencent.com'
+    - 'time1.cloud.tencent.com'
+    # (8) 代理与DNS提供商
+    - 'dns.google'
+    - 'cloudflare-dns.com'
+
+
 proxy-groups:
 - {name: 🚀手动切换, type: select, include-all-providers: true}
 - {name: 🚀节点选择, type: fallback, interval: 600, proxies: [🇭🇰香港节点, 🇹🇼台湾节点, 🇸🇬狮城节点, 🇯🇵日本节点, 🇺🇲美国节点, 🇰🇷韩国节点, 🇷🇺俄国节点, 🌐冷门节点, 🚀手动切换]}
