@@ -430,10 +430,10 @@ rule-providers:
 rules:
   - DOMAIN-SUFFIX,dns.google,🚀节点选择
   - DOMAIN-SUFFIX,cloudflare-dns.com,🚀节点选择
-  - IP-CIDR,8.8.8.8/32,🚀节点选择
-  - IP-CIDR,8.8.4.4/32,🚀节点选择
-  - IP-CIDR,1.1.1.1/32,🚀节点选择
-  - IP-CIDR,1.0.0.1/32,🚀节点选择
+  - IP-CIDR,8.8.8.8/32,🚀节点选择,no-resolve
+  - IP-CIDR,8.8.4.4/32,🚀节点选择,no-resolve
+  - IP-CIDR,1.1.1.1/32,🚀节点选择,no-resolve
+  - IP-CIDR,1.0.0.1/32,🚀节点选择,no-resolve
   - RULE-SET,OpenAi,💬OpenAi
   - RULE-SET,GoogleCN,🎯全球直连
   - RULE-SET,GoogleFCM,📢谷歌服务
