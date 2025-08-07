@@ -1,7 +1,7 @@
 #########################################
 # Sukka's Ruleset - General Global Services
-# Last Updated: 2025-08-01T16:05:55.038Z
-# Size: 1100
+# Last Updated: 2025-08-06T17:53:10.129Z
+# Size: 1108
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
@@ -165,6 +165,7 @@ DOMAIN-SUFFIX,minecraftforum.net
 DOMAIN-SUFFIX,hubspotstarter.net
 DOMAIN-SUFFIX,cloudfunctions.net
 DOMAIN-SUFFIX,azurewebsites.net
+DOMAIN-SUFFIX,vesselfinder.net
 DOMAIN-SUFFIX,tokto-motion.net
 DOMAIN-SUFFIX,reutersmedia.net
 DOMAIN-SUFFIX,azure-mobile.net
@@ -267,6 +268,7 @@ DOMAIN-SUFFIX,onepluscommunityserver.com
 DOMAIN-SUFFIX,privateinternetaccess.com
 DOMAIN-SUFFIX,returnyoutubedislike.com
 DOMAIN-SUFFIX,hubspotlinksstarter.com
+DOMAIN-SUFFIX,airtableusercontent.com
 DOMAIN-SUFFIX,precisionhydration.com
 DOMAIN-SUFFIX,lineshoppingseller.com
 DOMAIN-SUFFIX,minecraftservices.com
@@ -317,6 +319,7 @@ DOMAIN-SUFFIX,bandwagonhost.com
 DOMAIN-SUFFIX,androidpolice.com
 DOMAIN-SUFFIX,xhamsterlive.com
 DOMAIN-SUFFIX,vpnunlimited.com
+DOMAIN-SUFFIX,vesselfinder.com
 DOMAIN-SUFFIX,surfsharkdns.com
 DOMAIN-SUFFIX,spankingtube.com
 DOMAIN-SUFFIX,shutterstock.com
@@ -349,6 +352,7 @@ DOMAIN-SUFFIX,thingiverse.com
 DOMAIN-SUFFIX,theregister.com
 DOMAIN-SUFFIX,theguardian.com
 DOMAIN-SUFFIX,theatlantic.com
+DOMAIN-SUFFIX,techpowerup.com
 DOMAIN-SUFFIX,tailwindcss.com
 DOMAIN-SUFFIX,serverfault.com
 DOMAIN-SUFFIX,rule34video.com
@@ -554,6 +558,7 @@ DOMAIN-SUFFIX,badoocdn.com
 DOMAIN-SUFFIX,autodraw.com
 DOMAIN-SUFFIX,autodesk.com
 DOMAIN-SUFFIX,apkcombo.com
+DOMAIN-SUFFIX,airtable.com
 DOMAIN-SUFFIX,abebooks.com
 DOMAIN-SUFFIX,9to5toys.com
 DOMAIN-SUFFIX,zendesk.com
@@ -793,6 +798,7 @@ DOMAIN-SUFFIX,imgur.com
 DOMAIN-SUFFIX,ifttt.com
 DOMAIN-SUFFIX,hyvor.com
 DOMAIN-SUFFIX,huobi.com
+DOMAIN-SUFFIX,hkepc.com
 DOMAIN-SUFFIX,googl.com
 DOMAIN-SUFFIX,gmail.com
 DOMAIN-SUFFIX,globo.com
@@ -824,9 +830,11 @@ DOMAIN-SUFFIX,3movs.com
 DOMAIN-SUFFIX,123rf.com
 DOMAIN-SUFFIX,123av.com
 DOMAIN-SUFFIX,xnxx.com
+DOMAIN-SUFFIX,xkcd.com
 DOMAIN-SUFFIX,xing.com
 DOMAIN-SUFFIX,waze.com
 DOMAIN-SUFFIX,vjav.com
+DOMAIN-SUFFIX,vice.com
 DOMAIN-SUFFIX,v2ex.com
 DOMAIN,help.ubnt.com
 DOMAIN-SUFFIX,time.com
