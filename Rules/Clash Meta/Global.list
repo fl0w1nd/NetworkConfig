@@ -1,12 +1,12 @@
 #########################################
 # Sukka's Ruleset - General Global Services
-# Last Updated: 2025-11-08T15:29:20.933Z
-# Size: 1169
+# Last Updated: 2025-11-11T16:37:52.174Z
+# Size: 1171
 # License: AGPL 3.0
 # Homepage: https://ruleset.skk.moe
 # GitHub: https://github.com/SukkaW/Surge
 #
-# This file contains rules for services that are not available inside the Mainland China.
+# This file contains rules for services that are NOT available inside the Mainland China.
 #########################################
 DOMAIN,7h1s_rul35et_i5_mad3_by_5ukk4w-ruleset.skk.moe
 DOMAIN-SUFFIX,community
@@ -62,6 +62,7 @@ DOMAIN-SUFFIX,sex
 DOMAIN-SUFFIX,rip
 DOMAIN-SUFFIX,huobi.pro
 DOMAIN-SUFFIX,certificate-transparency.org
+DOMAIN-SUFFIX,wikimediafoundation.org
 DOMAIN-SUFFIX,freedownloadmanager.org
 DOMAIN-SUFFIX,notepad-plus-plus.org
 DOMAIN-SUFFIX,polymer-project.org
@@ -69,6 +70,7 @@ DOMAIN-SUFFIX,archiveofourown.org
 DOMAIN-SUFFIX,wmfusercontent.org
 DOMAIN-SUFFIX,whispersystems.org
 DOMAIN-SUFFIX,waybackmachine.org
+DOMAIN-SUFFIX,wikifunctions.org
 DOMAIN-SUFFIX,prismlauncher.org
 DOMAIN-SUFFIX,openstreetmap.org
 DOMAIN-SUFFIX,lumendatabase.org
