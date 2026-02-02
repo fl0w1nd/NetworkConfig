@@ -1,3 +1,7 @@
+# 本仓库已归档，新仓库如下
+
+https://github.com/fl0w1nd/Proxy-Rule-Manager
+
 # 🧩 NetworkConfig
 
 ![Static Badge](https://img.shields.io/badge/Clash%20Meta-grey)
